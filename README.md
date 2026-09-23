@@ -10,40 +10,40 @@ Practical AI skills from Rachael Quisel. Take what helps, tweak it for your setu
 
 | Skill | What it does | Download |
 | --- | --- | --- |
-| [Airtable backup](airtable-backup-and-migrate/README.md) | Airtable backup. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/airtable-backup-and-migrate.zip) |
-| [Auto](auto/README.md) | Auto. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/auto.zip) |
-| [Build sprint summary](build-sprint-summary/README.md) | Build sprint summary. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/build-sprint-summary.zip) |
-| [Client document changelog](client-doc-changelog/README.md) | Client document changelog. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-changelog.zip) |
-| [Client document decisions](client-doc-decisions/README.md) | Client document decisions. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-decisions.zip) |
-| [Client interface prompt documentation](client-doc-interface-prompts/README.md) | Client interface prompt documentation. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-interface-prompts.zip) |
-| [Client document publishing](client-doc-push/README.md) | Client document publishing. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-push.zip) |
-| [Client user stories](client-doc-user-stories/README.md) | Client user stories. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-user-stories.zip) |
-| [Client vision and scope](client-doc-vision-and-scope/README.md) | Client vision and scope. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-vision-and-scope.zip) |
-| [Client documentation](client-docs/README.md) | Client documentation. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-docs.zip) |
-| [Course completion certificate](course-completion-certificate/README.md) | Course completion certificate. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/course-completion-certificate.zip) |
+| [Airtable backup](airtable-backup-and-migrate/README.md) | Save schema, records, and attachment files locally. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/airtable-backup-and-migrate.zip) |
+| [Auto](auto/README.md) | Explain one automation from its current source. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/auto.zip) |
+| [Build sprint summary](build-sprint-summary/README.md) | Format supplied task data into a status update. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/build-sprint-summary.zip) |
+| [Client document changelog](client-doc-changelog/README.md) | Record shipped changes and their user-visible effects. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-changelog.zip) |
+| [Client document decisions](client-doc-decisions/README.md) | Preserve decisions, reasons, and alternatives. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-decisions.zip) |
+| [Client interface prompt documentation](client-doc-interface-prompts/README.md) | Capture exact prompts and interface iteration history. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-interface-prompts.zip) |
+| [Client document publishing](client-doc-push/README.md) | Publish approved staged documents to GitHub. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-push.zip) |
+| [Client user stories](client-doc-user-stories/README.md) | Describe what each role needs and why. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-user-stories.zip) |
+| [Client vision and scope](client-doc-vision-and-scope/README.md) | Define the problem, outcome, included work, and exclusions. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-vision-and-scope.zip) |
+| [Client documentation](client-docs/README.md) | Maintain the eight main project documents. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-docs.zip) |
+| [Course completion certificate](course-completion-certificate/README.md) | Generate or retrieve a certificate for one selected student. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/course-completion-certificate.zip) |
 | [Dissonance Radar](dissonance-radar/SKILL.md) | Finds evidence-backed questions missed in a conversation or across meetings. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/dissonance-radar.zip) |
-| [Education](education/README.md) | Education. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/education.zip) |
-| [Evaluation creation](eval-creation/README.md) | Evaluation creation. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/eval-creation.zip) |
-| [Execute and reconcile pain points](execute-and-reconcile-pain-points/README.md) | Execute and reconcile pain points. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/execute-and-reconcile-pain-points.zip) |
-| [File naming convention](file-naming-convention/README.md) | File naming convention. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/file-naming-convention.zip) |
-| [Five-signals PRD](five-signals-prd/README.md) | Five-signals PRD. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/five-signals-prd.zip) |
-| [Friday sprint summary](friday-sprint-summary/README.md) | Friday sprint summary. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/friday-sprint-summary.zip) |
-| [Gem Miner](gem-miner/README.md) | Selects exact, source-backed quotes from authorized messages for review. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/gem-miner.zip) |
-| [Gmail triage](gmail-triage/README.md) | Gmail triage. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/gmail-triage.zip) |
-| [How-it-works document](how-it-works-doc/README.md) | How-it-works document. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/how-it-works-doc.zip) |
-| [KPI report](kpi-report/README.md) | KPI report. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/kpi-report.zip) |
-| [Meeting prep](meeting-prep/README.md) | Meeting prep. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/meeting-prep.zip) |
-| [Micro case study](micro-case-study/README.md) | Micro case study. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/micro-case-study.zip) |
-| [Mistakes](mistakes/README.md) | Mistakes. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/mistakes.zip) |
-| [Normalize CSVs for Airtable](normalize-csvs-for-airtable/README.md) | Normalize CSVs for Airtable. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/normalize-csvs-for-airtable.zip) |
-| [Omni prompt](omni-prompt/README.md) | Omni prompt. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/omni-prompt.zip) |
-| [Plain-English project communication](plain-english-project-communication/README.md) | Plain-English project communication. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/plain-english-project-communication.zip) |
-| [Post to huddle](post-to-huddle/README.md) | Post to huddle. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/post-to-huddle.zip) |
-| [Postmortem](postmortem/README.md) | Postmortem. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/postmortem.zip) |
-| [Rubric](rubric/README.md) | Rubric. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/rubric.zip) |
-| [Voice align](voice-align/README.md) | Voice align. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/voice-align.zip) |
-| [Work voice](work-voice/README.md) | Work voice. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/work-voice.zip) |
-| [Write artifact](write-artifact/README.md) | Write artifact. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/write-artifact.zip) |
+| [Education](education/README.md) | Create a detailed automation handoff for operators and engineers. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/education.zip) |
+| [Evaluation creation](eval-creation/README.md) | Define evidence-based checks for a repeated process. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/eval-creation.zip) |
+| [Execute and reconcile pain points](execute-and-reconcile-pain-points/README.md) | Connect implementation evidence to issue status updates. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/execute-and-reconcile-pain-points.zip) |
+| [File naming convention](file-naming-convention/README.md) | Give project documents consistent, useful filenames. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/file-naming-convention.zip) |
+| [Five-signals PRD](five-signals-prd/README.md) | Explain requirements, estimates, design choices, and failure cases. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/five-signals-prd.zip) |
+| [Friday sprint summary](friday-sprint-summary/README.md) | Prepare or deliver configured weekly project updates. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/friday-sprint-summary.zip) |
+| [Gem Miner](gem-miner/README.md) | Collect selected conversation quotes for later review. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/gem-miner.zip) |
+| [Gmail triage](gmail-triage/README.md) | Classify mail, prepare drafts, and report decisions needed. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/gmail-triage.zip) |
+| [How-it-works document](how-it-works-doc/README.md) | Write an operating explanation with clear boundaries. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/how-it-works-doc.zip) |
+| [KPI report](kpi-report/README.md) | Turn discovery notes into a measurement plan. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/kpi-report.zip) |
+| [Meeting prep](meeting-prep/README.md) | Gather project context and open questions before a meeting. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/meeting-prep.zip) |
+| [Micro case study](micro-case-study/README.md) | Describe one verified improvement or clearly labeled planned outcome. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/micro-case-study.zip) |
+| [Mistakes](mistakes/README.md) | Review prior work and turn supported errors into corrections. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/mistakes.zip) |
+| [Normalize CSVs for Airtable](normalize-csvs-for-airtable/README.md) | Prepare inconsistent files for import and check the result. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/normalize-csvs-for-airtable.zip) |
+| [Omni prompt](omni-prompt/README.md) | Write explicit AI field and interface prompts. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/omni-prompt.zip) |
+| [Plain-English project communication](plain-english-project-communication/README.md) | Make project numbers and status understandable. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/plain-english-project-communication.zip) |
+| [Post to huddle](post-to-huddle/README.md) | Deliver an approved message to a configured Slack channel. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/post-to-huddle.zip) |
+| [Postmortem](postmortem/README.md) | Preview or send monthly reflection questions with duplicate checks. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/postmortem.zip) |
+| [Rubric](rubric/README.md) | Review a plan against explicit criteria and revise it. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/rubric.zip) |
+| [Voice align](voice-align/README.md) | Rewrite for clarity while preserving the source facts. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/voice-align.zip) |
+| [Work voice](work-voice/README.md) | Draft direct, considerate messages with realistic commitments. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/work-voice.zip) |
+| [Write artifact](write-artifact/README.md) | Save an approved document as a new Airtable record. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/write-artifact.zip) |
 
 ## Get started
 
