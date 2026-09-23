@@ -6,10 +6,44 @@ Practical AI skills from Rachael Quisel. Take what helps, tweak it for your setu
 
 ## Available skills
 
+34 public skills. Each ZIP includes its instructions, supporting files, and license.
+
 | Skill | What it does | Download |
 | --- | --- | --- |
-| [Dissonance Radar](dissonance-radar/SKILL.md) | Reviews conversations for missed questions, conflicting expectations, and changes worth asking about. Returns a few questions grounded in the transcript. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/dissonance-radar.zip) |
-| [Gem Miner](gem-miner/SKILL.md) | Finds funny, sweet, weird, and memorable things you said, with exact quotes and source details for review. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/gem-miner.zip) |
+| [Airtable backup](airtable-backup-and-migrate/README.md) | Airtable backup. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/airtable-backup-and-migrate.zip) |
+| [Auto](auto/README.md) | Auto. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/auto.zip) |
+| [Build sprint summary](build-sprint-summary/README.md) | Build sprint summary. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/build-sprint-summary.zip) |
+| [Client document changelog](client-doc-changelog/README.md) | Client document changelog. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-changelog.zip) |
+| [Client document decisions](client-doc-decisions/README.md) | Client document decisions. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-decisions.zip) |
+| [Client interface prompt documentation](client-doc-interface-prompts/README.md) | Client interface prompt documentation. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-interface-prompts.zip) |
+| [Client document publishing](client-doc-push/README.md) | Client document publishing. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-push.zip) |
+| [Client user stories](client-doc-user-stories/README.md) | Client user stories. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-user-stories.zip) |
+| [Client vision and scope](client-doc-vision-and-scope/README.md) | Client vision and scope. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-vision-and-scope.zip) |
+| [Client documentation](client-docs/README.md) | Client documentation. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-docs.zip) |
+| [Course completion certificate](course-completion-certificate/README.md) | Course completion certificate. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/course-completion-certificate.zip) |
+| [Dissonance Radar](dissonance-radar/SKILL.md) | Finds evidence-backed questions missed in a conversation or across meetings. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/dissonance-radar.zip) |
+| [Education](education/README.md) | Education. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/education.zip) |
+| [Evaluation creation](eval-creation/README.md) | Evaluation creation. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/eval-creation.zip) |
+| [Execute and reconcile pain points](execute-and-reconcile-pain-points/README.md) | Execute and reconcile pain points. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/execute-and-reconcile-pain-points.zip) |
+| [File naming convention](file-naming-convention/README.md) | File naming convention. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/file-naming-convention.zip) |
+| [Five-signals PRD](five-signals-prd/README.md) | Five-signals PRD. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/five-signals-prd.zip) |
+| [Friday sprint summary](friday-sprint-summary/README.md) | Friday sprint summary. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/friday-sprint-summary.zip) |
+| [Gem Miner](gem-miner/README.md) | Selects exact, source-backed quotes from authorized messages for review. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/gem-miner.zip) |
+| [Gmail triage](gmail-triage/README.md) | Gmail triage. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/gmail-triage.zip) |
+| [How-it-works document](how-it-works-doc/README.md) | How-it-works document. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/how-it-works-doc.zip) |
+| [KPI report](kpi-report/README.md) | KPI report. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/kpi-report.zip) |
+| [Meeting prep](meeting-prep/README.md) | Meeting prep. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/meeting-prep.zip) |
+| [Micro case study](micro-case-study/README.md) | Micro case study. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/micro-case-study.zip) |
+| [Mistakes](mistakes/README.md) | Mistakes. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/mistakes.zip) |
+| [Normalize CSVs for Airtable](normalize-csvs-for-airtable/README.md) | Normalize CSVs for Airtable. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/normalize-csvs-for-airtable.zip) |
+| [Omni prompt](omni-prompt/README.md) | Omni prompt. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/omni-prompt.zip) |
+| [Plain-English project communication](plain-english-project-communication/README.md) | Plain-English project communication. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/plain-english-project-communication.zip) |
+| [Post to huddle](post-to-huddle/README.md) | Post to huddle. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/post-to-huddle.zip) |
+| [Postmortem](postmortem/README.md) | Postmortem. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/postmortem.zip) |
+| [Rubric](rubric/README.md) | Rubric. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/rubric.zip) |
+| [Voice align](voice-align/README.md) | Voice align. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/voice-align.zip) |
+| [Work voice](work-voice/README.md) | Work voice. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/work-voice.zip) |
+| [Write artifact](write-artifact/README.md) | Write artifact. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/write-artifact.zip) |
 
 ## Get started
 
@@ -66,21 +100,22 @@ See a [fictional message batch and sample picks](gem-miner/examples/sample-gems.
 
 ## How this repository is organized
 
-```text
-dissonance-radar/
-  SKILL.md                 The skill's instructions
-  agents/openai.yaml       Optional Codex display metadata
-  references/lenses.md     Patterns to look for and evidence limits
-  examples/sample-review.md
-gem-miner/
-  SKILL.md                 Quote-selection and output instructions
-  agents/openai.yaml       Optional Codex display metadata
-  examples/sample-gems.md
-downloads/                 Installable ZIPs
-scripts/package_skills.py  Rebuilds the ZIPs from source
-```
+Each top-level skill folder contains `SKILL.md`. The new portfolio skills also include a README with inputs, usage, and limits. Supporting scripts or references are included only where the public workflow needs them.
 
-The skill folders are the source of truth. ZIPs contain those same files plus the repository's license.
+`downloads/` contains installable ZIPs. Run `python3 scripts/package_skills.py` to rebuild them. The skill folders are the source of truth.
+
+## Public versions
+
+These are portable adaptations of working skills. They exclude private client data, local account mappings, personal conversation examples, and inherited sending permissions.
+
+- Work voice and Course completion certificate have neutral public names.
+- Voice align edits text without the private installation’s external logging or notification steps.
+- Gem Miner uses supplied or authorized messages without a private history extractor or automatic uploads.
+- Auto, CSV normalization, and certificate creation provide workflows that use the requester’s sources and tools. They do not include the original private integration runners.
+- Airtable backup includes its Python helper. Issue reconciliation includes its local verification helper.
+- Message delivery, mailbox changes, record writes, and repository publishing need the requester’s configuration and authorization.
+
+Keep methodology attribution when adapting a skill. A documented workflow is not proof of a live integration test.
 
 ## More Airtable resources
 
