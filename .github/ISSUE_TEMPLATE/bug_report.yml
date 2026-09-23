@@ -1,0 +1,30 @@
+name: Report a skill problem
+description: An instruction failed, confused the assistant, or produced an unhelpful result.
+title: "[Skill issue]: "
+body:
+  - type: input
+    id: skill
+    attributes:
+      label: Skill name
+    validations:
+      required: true
+  - type: input
+    id: assistant
+    attributes:
+      label: Assistant and setup
+      description: Which assistant or model did you use? How did you load the skill?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened?
+      description: Include a small fictional or anonymized example. Do not include private transcripts, client details, credentials, or personal information.
+    validations:
+      required: true

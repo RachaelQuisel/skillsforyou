@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gem Miner"
+  short_description: "Find memorable lines in your own messages"
+  default_prompt: "Use $gem-miner to find the best funny, sweet, or surprising quotes in these messages."

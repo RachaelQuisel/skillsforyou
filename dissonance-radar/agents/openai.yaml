@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dissonance Radar"
+  short_description: "Find missed questions in your conversations"
+  default_prompt: "Use $dissonance-radar to find the most useful questions I missed asking in this conversation."

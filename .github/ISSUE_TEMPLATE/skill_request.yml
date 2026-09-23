@@ -1,0 +1,27 @@
+name: Suggest a skill
+description: Suggest a useful task for a new skill.
+title: "[Skill idea]: "
+body:
+  - type: textarea
+    id: task
+    attributes:
+      label: What task should the skill help with?
+    validations:
+      required: true
+  - type: textarea
+    id: input
+    attributes:
+      label: What would someone give it?
+      description: Describe the input with a fictional or anonymized example.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: What would a useful result look like?
+    validations:
+      required: true
+  - type: textarea
+    id: tools
+    attributes:
+      label: Does it require any tools or accounts?
