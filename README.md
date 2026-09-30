@@ -6,12 +6,13 @@ Practical AI skills from Rachael Quisel. Take what helps, tweak it for your setu
 
 ## Available skills
 
-34 public skills. Each ZIP includes its instructions, supporting files, and license.
+35 public skills. Each ZIP includes its instructions, supporting files, and license.
 
 | Skill | What it does | Download |
 | --- | --- | --- |
 | [Airtable backup](airtable-backup-and-migrate/README.md) | Save schema, records, and attachment files locally. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/airtable-backup-and-migrate.zip) |
 | [Auto](auto/README.md) | Explain one automation from its current source. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/auto.zip) |
+| [Applicant CSV to Airtable sync](applicant-csv-to-airtable-sync/README.md) | Audit, preview, or apply supplied applicant CSVs to a configured base. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/applicant-csv-to-airtable-sync.zip) |
 | [Build sprint summary](build-sprint-summary/README.md) | Format supplied task data into a status update. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/build-sprint-summary.zip) |
 | [Client document changelog](client-doc-changelog/README.md) | Record shipped changes and their user-visible effects. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-changelog.zip) |
 | [Client document decisions](client-doc-decisions/README.md) | Preserve decisions, reasons, and alternatives. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-decisions.zip) |

@@ -1,0 +1,51 @@
+{
+  "baseId": "appXXXXXXXXXXXXXX",
+  "automationLogTableId": "tblXXXXXXXXXXXXXX",
+  "automationInventoryTableId": "tblXXXXXXXXXXXXXX",
+  "automationInventoryRecordId": "recXXXXXXXXXXXXXX",
+  "automationName": "Applicant CSV to Airtable sync",
+  "writerId": "applicant-csv-import",
+  "fields": {
+    "automationName": "fldXXXXXXXXXXXXX1",
+    "outcome": "fldXXXXXXXXXXXXX2",
+    "source": "fldXXXXXXXXXXXXX3",
+    "runKey": "fldXXXXXXXXXXXXX4",
+    "reason": "fldXXXXXXXXXXXXX5",
+    "fieldsWritten": "fldXXXXXXXXXXXXX6",
+    "notes": "fldXXXXXXXXXXXXX7",
+    "durationMs": "fldXXXXXXXXXXXXX8",
+    "loggedAt": "fldXXXXXXXXXXXXX9",
+    "automationLink": "fldXXXXXXXXXXXX10",
+    "clientDocuments": "fldXXXXXXXXXXXX11"
+  },
+  "organizations": {
+    "Northgate Family Agency": "NFA",
+    "Riverbend Institute": "RBI"
+  },
+  "tables": {
+    "Application": {
+      "tableId": "tblXXXXXXXXXXXXXX",
+      "viewId": "viwXXXXXXXXXXXXXX"
+    },
+    "Applicant": {
+      "tableId": "tblXXXXXXXXXXXXXX",
+      "viewId": "viwXXXXXXXXXXXXXX"
+    },
+    "Historical": {
+      "tableId": "tblXXXXXXXXXXXXXX",
+      "viewId": "viwXXXXXXXXXXXXXX"
+    },
+    "Team Assignment": {
+      "tableId": "tblXXXXXXXXXXXXXX",
+      "viewId": "viwXXXXXXXXXXXXXX"
+    },
+    "Case Task": {
+      "tableId": "tblXXXXXXXXXXXXXX",
+      "viewId": "viwXXXXXXXXXXXXXX"
+    },
+    "Automation Log": {
+      "tableId": "tblXXXXXXXXXXXXXX",
+      "viewId": "viwXXXXXXXXXXXXXX"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Applicant CSV to Airtable Sync"
+  short_description: "Audit, preview, or sync supplied applicant CSVs"
+  default_prompt: "Use $applicant-csv-to-airtable-sync to preview my supplied applicant CSVs for Airtable and explain the proposed changes and review items."
+policy:
+  allow_implicit_invocation: false
