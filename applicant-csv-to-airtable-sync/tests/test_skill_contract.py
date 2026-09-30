@@ -138,7 +138,12 @@ class SkillContractTests(ContractAssertions):
 
     def test_writes_one_annotated_csv_per_source_without_overwriting_it(self) -> None:
         self.contains(
-            self.skill, "Create one `<source-name>-airtable-diff.csv` per source", "SKILL.md"
+            self.skill,
+            "create one `<source-name>-airtable-diff.csv` per source",
+            "SKILL.md",
+        )
+        self.contains(
+            self.skill, "annotated CSVs are optional unless requested", "SKILL.md"
         )
         self.contains(self.skill, "Keep each original file unchanged", "SKILL.md")
         for field in (

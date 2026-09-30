@@ -46,7 +46,7 @@ Never search a downloads folder, the workspace, or prior runs for candidate CSVs
 
 ## Annotated source CSVs
 
-Create one `<source-name>-airtable-diff.csv` per source. Keep all source columns and add:
+For Apply, create one `<source-name>-airtable-diff.csv` per source. Preview needs a local proposal; annotated CSVs are optional unless requested. Keep all source columns in an annotated CSV and add:
 
 - `Airtable action`
 - `Airtable result`
