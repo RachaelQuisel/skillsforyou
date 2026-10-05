@@ -111,6 +111,80 @@ class SyncConfigTests(unittest.TestCase):
             self.module.load_config()["automationLogTableId"], "tblRealLog00001"
         )
 
+    def filled_gol_config(self) -> dict:
+        """The example with only the still-unknown ids replaced."""
+        config = json.loads(EXAMPLE.read_text(encoding="utf-8"))
+        config["automationInventoryRecordId"] = "recRealRec00001"
+        config["fields"] = {
+            key: f"fldReal{index:04d}" for index, key in enumerate(config["fields"], start=1)
+        }
+        for entry in config["tables"].values():
+            entry["viewId"] = "viwRealView00001"
+        return config
+
+    def test_maps_binti_csv_headers_onto_gol_base_fields(self) -> None:
+        self.assertEqual(
+            self.module.application_field_for_csv_header("Binti application id"),
+            "Binti ID",
+        )
+        self.assertEqual(
+            self.module.application_field_for_csv_header("\ufeffBinti application id"),
+            "Binti ID",
+        )
+        self.assertEqual(self.module.application_field_for_csv_header("Rfa id"), "RFA ID")
+        self.assertEqual(self.module.application_field_for_csv_header("\ufeffRfa id"), "RFA ID")
+        self.assertIsNone(
+            self.module.application_field_for_csv_header("Applicant external identifier")
+        )
+        self.assertTrue(self.module.header_is_person_id("Binti Person ID"))
+        self.assertTrue(self.module.header_is_person_id("Person ID"))
+        for header in (
+            "Applicant external identifier",
+            "Co-applicant external identifier",
+            "Applicant email",
+            "Applicant phone number",
+            "Binti application id",
+            "Rfa id",
+        ):
+            self.assertFalse(self.module.header_is_person_id(header), header)
+
+    def test_example_match_keys_are_the_gol_base_contract(self) -> None:
+        example = json.loads(EXAMPLE.read_text(encoding="utf-8"))
+        self.assertEqual(example["baseId"], self.module.GOL_BASE_ID)
+        self.assertEqual(example["matchKeys"], self.module.gol_match_keys())
+        self.assertEqual(list(example["writeOrder"]), list(self.module.WRITE_ORDER))
+        self.assertEqual(
+            example["tables"]["Assigned Tasks"]["tableId"],
+            self.module.TABLE_IDS["Assigned Tasks"],
+        )
+
+    def test_accepts_a_filled_gol_base_configuration(self) -> None:
+        loaded = self.module.load_config(self.write(self.filled_gol_config()))
+        self.assertEqual(loaded["baseId"], self.module.GOL_BASE_ID)
+        self.assertEqual(loaded["tables"]["Application"]["tableId"], "tblle86w7gTHmBsDS")
+        self.assertIn("Assigned Tasks", loaded["tables"])
+
+    def test_rejects_the_retired_gol_erp_base(self) -> None:
+        config = self.filled_gol_config()
+        config["baseId"] = self.module.RETIRED_ERP_BASE_ID
+        with self.assertRaisesRegex(self.module.ConfigError, "retired GOL ERP"):
+            self.module.load_config(self.write(config))
+
+    def test_rejects_the_old_case_task_table_name(self) -> None:
+        config = filled_config()
+        config["tables"]["Case Task"] = {
+            "tableId": "tblOldCaseTask01",
+            "viewId": "viwOldCaseTask01",
+        }
+        with self.assertRaisesRegex(self.module.ConfigError, "Assigned Tasks"):
+            self.module.load_config(self.write(config))
+
+    def test_rejects_a_gol_base_config_with_the_wrong_application_table(self) -> None:
+        config = self.filled_gol_config()
+        config["tables"]["Application"]["tableId"] = "tblNotApplication1"
+        with self.assertRaisesRegex(self.module.ConfigError, "table Application must be"):
+            self.module.load_config(self.write(config))
+
     def test_builds_table_and_record_links_from_the_configuration(self) -> None:
         config = self.module.load_config(self.write(filled_config()))
         table_url = self.module.table_link(config, "Application")

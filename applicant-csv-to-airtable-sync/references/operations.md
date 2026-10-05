@@ -34,7 +34,7 @@ The command-line default is Preview. Use an explicit mode in skill runs. Use a f
 
 ```json
 {
-  "baseId": "appXXXXXXXXXXXXXX",
+  "baseId": "appcxLcvRF7dWQOHH",
   "writerId": "applicant-csv-import",
   "checkedAt": "<ISO-8601 UTC time>",
   "activeWriters": [],
@@ -46,7 +46,7 @@ The check expires after 30 minutes. Refresh it from current evidence before cont
 
 ## Apply and log
 
-After intake, Preview, and the writer check pass, create one Automation Log. Use one stable run key for every source and retry:
+After intake, Preview, and the writer check pass, create one Automation Log. Use one stable run key for every source and retry. Write Application, then Applicant, then Historical, then Team Assignment, then Assigned Tasks:
 
 ```sh
 python3 scripts/log_sync_run.py \

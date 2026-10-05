@@ -56,7 +56,8 @@ Keep JSON verification blocks, diagnostic output, internal filenames, private pa
 
 - Count unique created record IDs from confirmed write receipts. Count unique updated existing records separately. Exclude records created during this run from the existing-record update total. List the Automation Log helper's record separately from business records.
 - Determine each source action separately from its review result. A completed Application update can have an Updated action and a Needs review result. An unresolved person match must not replace a confirmed Created or Updated action with Not changed. Verify Created against Application create receipts. Verify Updated against Application, Applicant, or Team Assignment receipts for that source row.
-- Count source rows independently. One source row can change several tables. An Updated source action can reflect an Applicant or staff-link change. A No change action can coexist with a Needs follow-up result. It does not count Historical-only or Case Task-only writes.
+- Count source rows independently. One source row can change several tables. An Updated source action can reflect an Applicant or staff-link change. A No change action can coexist with a Needs follow-up result. It does not count Historical-only or Assigned Tasks-only writes.
+- Use the live names `Binti ID`, `RFA ID`, `Binti Person ID`, and `Assigned Tasks`. The review column `Binti application ID` is the source CSV identifier. The Airtable field is `Binti ID`.
 - Derive unresolved source-row counts from the final comparison. Deduplicate issue occurrences within a source row. Count identity conflicts, retained value differences, and missing staff links separately. An issue count is not always a row count.
 - Populate Record name from each table's live primaryFieldId and the saved cellValuesByFieldId value. Do not assume a top-level record.name property exists. Verify every available primary-field name appears in the detailed CSV. Mark a genuinely unavailable name unknown.
 - Capture live table and field definitions and before/after records. Match records by ID when comparing values. Do not relabel a created record as an update because a field was filled later.
@@ -71,9 +72,9 @@ Use current evidence to resolve a deterministic match. Do not merge people, repl
 
 ### A source application ID differs from an existing case
 
-- Keep the existing Application ID.
+- Keep the existing `Binti ID`.
 - For a renewal, treat the difference as accounted for only after live readback confirms a unique Historical Status Change event, its exact source date, and its link to the uniquely matched RFA case.
-- Otherwise, report the existing and source values, Application record link, and affected application ID field ID. Ask the client to confirm which identifier belongs to the case.
+- Otherwise, report the existing and source values, Application record link, and the `Binti ID` field `fldsxEB5mSLl3MBK6`. Ask the client to confirm which identifier belongs to the case.
 
 ### The Applicant match is ambiguous
 

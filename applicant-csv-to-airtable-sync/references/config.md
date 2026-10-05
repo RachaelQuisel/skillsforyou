@@ -2,42 +2,61 @@
 
 ## Configure the destination
 
-No base, table, record, or field identifier is hardcoded in this skill. Copy [config.example.json](config.example.json) to a path outside this repository, fill in the identifiers from your own base, and point the helpers at it with `--config <path>` or `APPLICANT_SYNC_CONFIG=<path>`. Both helpers exit with code `2` while any value still holds an `XXXX` placeholder.
+The live destination is GoL Base, `appcxLcvRF7dWQOHH`. The retired GOL ERP base is `appp6pbBbaxuOLu2v`. A live schema read shows that ID is GOL ERP, not GoL Base. Application's `GOL ERP Base RecID` (`fldtVbqKPooJGhu5A`) was the migration upsert key. This sync does not match on it.
+
+Copy [config.example.json](config.example.json) to a path outside this repository, fill the remaining view IDs and Automation Log field IDs, and point the helpers at it with `--config <path>` or `APPLICANT_SYNC_CONFIG=<path>`. Both helpers exit with code `2` while any value still holds an `XXXX` placeholder. The example already names GoL Base and the live table IDs. View IDs were not in the schema read used for this retarget, so they stay placeholders until filled from the live base. A config that uses the retired base ID, or a table named `Case Task`, is rejected.
 
 | Setting | Value |
 |---|---|
 | Project | The current project workspace. |
-| Base | `baseId` in the configuration. |
-| Automation Inventory | `automationInventoryTableId`, record `automationInventoryRecordId`. |
-| Automation Log | `automationLogTableId`. |
+| Base | GoL Base `appcxLcvRF7dWQOHH`. |
+| Automation Inventory | `automationInventoryTableId` (`tblIrEObjqmmqzAHb`), record `automationInventoryRecordId`. |
+| Automation Log | `automationLogTableId` (`tblprCx6rMOrVNhrf`). |
 | Runner | `<project-workspace>/scripts/run_applicant_airtable_sync.py`. |
 | Private run root | `<project-workspace>/.runtime/applicant-csv-to-airtable-sync/<run-key>`. |
 | Client document root | `<project-workspace>/docs/applicant-csv-to-airtable-sync/<run-key>`. |
 | Log helper | `scripts/log_sync_run.py` in this skill. |
 | Attachment helper | `scripts/attach_log_documents.py` in this skill. |
 
-The runner is project-specific and is not part of this skill package. Supply your own importer with the same flags.
+The runner is project-specific and is not part of this skill package. This package does not include `scripts/run_applicant_airtable_sync.py`. Supply your own importer with the same flags.
 
-Reject any other base. Refresh table and field definitions before Apply. Use field IDs for writes and live names for reports. A renamed field keeps its ID; a name lookup fails as though it were a permission problem.
+A run uses the GoL Base ID in the configuration. Refresh table and field definitions before Apply. Use field IDs for writes and live names for reports. A renamed field keeps its ID; a name lookup fails as though it were a permission problem.
 
-Configure one entry per table you want linked, in the configuration's `tables` block. Build a table link as `https://airtable.com/<base-id>/<table-id>/<view-id>`. Append `/<record-id>` for a direct record link.
+Configure one entry per table you want linked, in the configuration's `tables` block. Build a table link as `https://airtable.com/<base-id>/<table-id>/<view-id>`. Append `/<record-id>` for a direct record link. Linked-record fields store record IDs, not display names.
+
+## Match keys
+
+Binti's export headers are not Airtable field names. Strip a leading U+FEFF, then map:
+
+| CSV header, kept as Binti writes it | Airtable table | Airtable field | Field ID |
+|---|---|---|---|
+| `Binti application id` | Application `tblle86w7gTHmBsDS` | `Binti ID` | `fldsxEB5mSLl3MBK6` |
+| `Rfa id` | Application | `RFA ID` | `fldR9l7Jjm6Gr9yJV` |
+
+Upsert Application on `Binti ID` and on `RFA ID`. GoL Base has neither `Binti application id` nor `Rfa id`. Those were GOL ERP field names, and one copy of `Binti application id` began with U+FEFF. Matching on the old names finds nothing and creates a duplicate.
+
+Upsert Applicant (`tblZsYxi9G7MVI7p5`) on `Binti Person ID` (`flddz0UmEcHGNreOF`) only when the CSV or the reviewed person map supplies a person ID. The sample export has no person-id column. `Applicant external identifier` and `Co-applicant external identifier` are not that key. Applicant has no `Binti ID` or `RFA ID` field of its own. `RFA ID (from Applications)` is a lookup. Never match a person by phone or email.
+
+Write in this order: Application, Applicant, Historical (`tbl3VYr0NXusmTu7X`), Team Assignment (`tblmNxsRPLxsxSNbr`), Assigned Tasks (`tblVB0TYikSrpf2tg`). Assigned Tasks is the table this skill used to call Case Task. Application's link field is still named `Case Task` and stores Assigned Tasks record IDs.
+
+A blank source cell does not authorize erasing an Airtable value.
 
 ## Source ownership
 
-- Require `Binti application id`, `Rfa id`, `Applicant name`, `CBOs`, `Status`, and `Application started as` headers. These are the column names the source system writes, so they are matched literally. Validate the current runner's remaining required headers.
+- Require `Binti application id`, `Rfa id`, `Applicant name`, `CBOs`, `Status`, and `Application started as` headers. These are the column names the source system writes, so they are matched literally after stripping a leading BOM. Validate the current runner's remaining required headers.
 - Header sets vary between exports. One export names a column `Days since child placed` where another names it `Days from child placed to application approved`. Validate against the required fields, not an exact column list.
 - Preserve every `CBOs` organization. Map each organization named in the configuration's `organizations` block to its Client Type. Do not invent a Client Type for another organization.
 - Apply nonblank mapped source values with `--source-wins`. Protect stable identifiers and Airtable-only operational fields. A blank source cell does not authorize erasing an Airtable value.
-- Update both Application and Applicant as supported by the current mapping. Include valid Historical, Team Assignment, and Case Task changes. Do not extend the mapping during an import.
+- Update Application and Applicant using the match keys above. Include valid Historical, Team Assignment, and Assigned Tasks changes. Do not extend the mapping during an import.
 
 See [sample-applicant-export.csv](sample-applicant-export.csv) for the full header set and five fictional rows covering a blank RFA, a renewal reusing an existing RFA, an unknown worker, an unconfigured organization, and an ICWA row.
 
 ## Identity and staff
 
-- Prefer unique stable source identifiers. Use the existing RFA case only when the match is unique. Never replace a disputed stable identifier.
-- Match full normalized names exactly when the current code permits name evidence. Do not infer aliases, use surname tokens, accept spelling similarity, or fall back to an unrelated contact. A reviewed application-and-role mapping may provide a stable Person ID. It does not create a name alias.
+- Prefer unique stable source identifiers. Upsert Application on `Binti ID` and `RFA ID`. Use the existing RFA case only when the match is unique. Never replace a disputed stable identifier.
+- Match full normalized names exactly when the current code permits name evidence. Do not infer aliases, use surname tokens, accept spelling similarity, or fall back to an unrelated contact. A reviewed application-and-role mapping may provide a `Binti Person ID`. It does not create a name alias. Never match an Applicant by phone or email.
 - Preserve ambiguous Applicant links and values. Report the candidate records and related Application. Do not merge, guess, or create a duplicate to avoid review.
-- A unique source application ID is sufficient when the source RFA is blank. Leave the RFA blank.
+- A unique source `Binti application id` is sufficient when the source `Rfa id` is blank. Leave `RFA ID` blank.
 - Keep one case per RFA. Account for a different renewal application ID only after readback confirms its unique Historical Status Change event, exact source date, and link to the unique RFA case. Otherwise, leave the identifier difference unresolved.
 - Link Staff only after a unique verified match. A missing Staff match does not block other valid writes. It still prevents a Succeeded outcome. Do not create Staff or default an unknown role to a guessed one. Leave an unverified role blank.
 

@@ -12,7 +12,7 @@ Records written:
 - Applicant: 50 created, 62 updated
 - Historical: 124 created
 - Team Assignment: 38 created
-- Case Task: 30 updated
+- Assigned Tasks: 30 updated
 Totals: 245 created, 267 existing records updated.
 
 Source rows:
@@ -35,7 +35,7 @@ Client documents (attached to the log and verified by content):
 - Sharing archive: <client-docs>/Example-Client-Documents-2026-01-01.zip
 
 Changed tables: Application, Applicant, Historical, Team Assignment,
-Case Task, and Automation Log.
+Assigned Tasks, and Automation Log.
 ```
 
 Five rules are doing work in that message:
@@ -98,8 +98,8 @@ absent, because nothing has been created or updated.
 
 ```text
 Mode: Apply. The sync stopped before writing anything. The source CSV has no
-`Binti application id` column, so no row could be matched to an Airtable
-Application. No records were created or updated.
+`Binti application id` column, so no row could be matched to Airtable
+`Binti ID`. No records were created or updated.
 
 The log row is Failed and holds the details:
 https://airtable.com/appExample01/tblLog01/viwLog01/recLogExample

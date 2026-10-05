@@ -18,7 +18,7 @@ It never opens the source system, never calls its API, and never goes looking fo
 
 - Python 3.10 or later. No additional packages.
 - One or more applicant CSV exports. [references/sample-applicant-export.csv](references/sample-applicant-export.csv) shows the header set and five fictional rows.
-- A destination configuration: copy [references/config.example.json](references/config.example.json), fill in your own base, table, record, and field IDs, and keep it outside this repository.
+- A destination configuration: copy [references/config.example.json](references/config.example.json). It already points at GoL Base (`appcxLcvRF7dWQOHH`). Fill the remaining view IDs, the Automation Inventory record ID, and the Automation Log field IDs, and keep that copy outside this repository. The retired GOL ERP base (`appp6pbBbaxuOLu2v`) is rejected.
 - An Airtable personal access token with read and write access to that base, plus a CLI or MCP tool that can read and write records. The helpers read the token from `AIRTABLE_TOKEN` or an Airtable CLI profile at run time. No credential belongs in this package.
 - Your own importer at `scripts/run_applicant_airtable_sync.py` in the project workspace. That part is project-specific and is **not** included here. This package ships the mode contract, the writer-check gate, the run log, the document contract, and the attachment verification around it.
 
@@ -88,7 +88,7 @@ Both helpers exit with code `2` and an explanation while any identifier is still
 python3 -m unittest discover -s tests
 ```
 
-The suite checks the mode contract, the writer-check gate, the attachment and reconciliation logic, the configuration validation, the example document formats, and that no real base ID, client name, credential, or personal file path is present in the package.
+The suite checks the mode contract, the writer-check gate, the attachment and reconciliation logic, the configuration validation, the example document formats, and the GoL Base destination. The only live Airtable identifiers in the package are the ones documented for that base. Credentials and personal file paths stay out.
 
 To also check for your own site-specific names before publishing a fork:
 
