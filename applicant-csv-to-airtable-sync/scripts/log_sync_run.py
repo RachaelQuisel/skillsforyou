@@ -118,6 +118,7 @@ def upsert_automation_log(
             "tableId": table_id,
             "filters": filters,
             "fieldIds": [run_key_field_id],
+            "returnFieldsByFieldId": True,
             "pageSize": 3,
         },
     )

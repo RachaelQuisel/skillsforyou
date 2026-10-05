@@ -28,7 +28,7 @@ Never search a downloads folder, the workspace, or prior runs for candidate CSVs
 ## Read the current implementation
 
 - Read [config.md](references/config.md) for the fixed targets and data rules.
-- The destination is GoL Base `appcxLcvRF7dWQOHH`. The retired GOL ERP base `appp6pbBbaxuOLu2v` is rejected. Upsert Application on `Binti ID` and `RFA ID`. Upsert Applicant on `Binti Person ID` when a person ID is supplied. Write Application, then Applicant, then Historical, then Team Assignment, then Assigned Tasks. A blank cell never overwrites a stored value. Links store record IDs.
+- The destination is GoL Base `appcxLcvRF7dWQOHH`. The retired GOL ERP base `appp6pbBbaxuOLu2v` is rejected. Upsert Application on field IDs `fldsxEB5mSLl3MBK6` (Binti ID) and `fldR9l7Jjm6Gr9yJV` (RFA ID). Upsert Applicant on `flddz0UmEcHGNreOF` (Binti Person ID) when a person ID is supplied. `filterByFormula` and `fieldsToMergeOn` use those IDs, and reads set `returnFieldsByFieldId`. Write Application, then Applicant, then Historical, then Team Assignment, then Assigned Tasks. A blank cell never overwrites a stored value. Links store record IDs.
 - Read [operations.md](references/operations.md) for commands, writer checks, and outcomes.
 - Read [client-documents.md](references/client-documents.md) before drafting or refreshing reports.
 - Use the current project's `scripts/run_applicant_airtable_sync.py` and reconciliation engine. Inspect applicable `AGENTS.md`, current code, tests, and relevant trigger configuration. Keep production sync code in that project.

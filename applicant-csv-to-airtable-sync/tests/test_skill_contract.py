@@ -246,6 +246,14 @@ class SkillContractTests(ContractAssertions):
             self.contains(text, "Binti ID", where)
             self.contains(text, "Binti Person ID", where)
         self.contains(self.config, "RFA ID", "config.md")
+        self.contains(self.config, "returnFieldsByFieldId", "config.md")
+        self.contains(self.config, "fieldsToMergeOn", "config.md")
+        self.contains(self.operations, "returnFieldsByFieldId", "operations.md")
+        self.contains(self.operations, "fieldsToMergeOn", "operations.md")
+        for item in contract.field_catalog():
+            self.contains(self.config, item["fieldId"], "config.md")
+        for item in contract.UNRESOLVED_FIELDS:
+            self.assertNotIn("fieldId", item)
         self.contains(self.config, "Binti application id", "config.md")
         self.contains(self.config, "`Rfa id`", "config.md")
         self.contains(

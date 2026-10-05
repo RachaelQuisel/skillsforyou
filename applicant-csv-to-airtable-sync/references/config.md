@@ -26,18 +26,29 @@ Configure one entry per table you want linked, in the configuration's `tables` b
 
 ## Match keys
 
-Binti's export headers are not Airtable field names. Strip a leading U+FEFF, then map:
+Reads set `returnFieldsByFieldId` to true. `filterByFormula` uses `{fieldId}` and `fieldsToMergeOn` uses field IDs. A label is the current name only. Strip a leading U+FEFF from each Binti header, then map:
 
-| CSV header, kept as Binti writes it | Airtable table | Airtable field | Field ID |
-|---|---|---|---|
-| `Binti application id` | Application `tblle86w7gTHmBsDS` | `Binti ID` | `fldsxEB5mSLl3MBK6` |
-| `Rfa id` | Application | `RFA ID` | `fldR9l7Jjm6Gr9yJV` |
+| CSV header, kept as Binti writes it | Table | Label | Field ID | API use |
+|---|---|---|---|---|
+| `Binti application id` | Application `tblle86w7gTHmBsDS` | Binti ID | `fldsxEB5mSLl3MBK6` | Upsert key, looked up on its own |
+| `Rfa id` | Application | RFA ID | `fldR9l7Jjm6Gr9yJV` | Upsert key, looked up on its own |
+| `Status` | Application | Case Status | `fld3HrhY9xh9EWTso` | Write |
+|  | Application | Applicants | `fldITF9OcRYSU952a` | Link, record IDs |
+|  | Application | Assignment | `fldw87HpCuFHjUdiQ` | Link, record IDs |
+|  | Application | Events | `fldTn1SLNUBnELbUT` | Link to Historical, record IDs |
+|  | Application | Case Task | `fldFxMTIjCttt2vC9` | Link to Assigned Tasks, record IDs |
+|  | Application | GOL ERP Base RecID | `fldtVbqKPooJGhu5A` | Not an upsert key and not written |
+| Person ID, when supplied | Applicant `tblZsYxi9G7MVI7p5` | Binti Person ID | `flddz0UmEcHGNreOF` | Upsert key |
+|  | Applicant | RFA ID (from Applications) | `fldnNRWueleJKZWtV` | Lookup. Not an upsert key |
+|  | Historical `tbl3VYr0NXusmTu7X` | Application | `fldrhq6h7Y5kUjRBe` | Link, record IDs |
 
-Upsert Application on `Binti ID` and on `RFA ID`. GoL Base has neither `Binti application id` nor `Rfa id`. Those were GOL ERP field names, and one copy of `Binti application id` began with U+FEFF. Matching on the old names finds nothing and creates a duplicate.
+Airtable ANDs every ID in one `fieldsToMergeOn` list, so each lookup is its own formula and a write merges on the one field ID that matched. A blank `Rfa id` stays out of both. GoL Base has neither `Binti application id` nor `Rfa id`. Those were GOL ERP field names, and one copy of `Binti application id` began with U+FEFF.
 
-Upsert Applicant (`tblZsYxi9G7MVI7p5`) on `Binti Person ID` (`flddz0UmEcHGNreOF`) only when the CSV or the reviewed person map supplies a person ID. The sample export has no person-id column. `Applicant external identifier` and `Co-applicant external identifier` are not that key. Applicant has no `Binti ID` or `RFA ID` field of its own. `RFA ID (from Applications)` is a lookup. Never match a person by phone or email.
+Upsert Applicant on `flddz0UmEcHGNreOF` only when a person ID is supplied. The sample export has no person-id column. `Applicant external identifier` and `Co-applicant external identifier` are not that key. Never match a person by phone or email.
 
-Write in this order: Application, Applicant, Historical (`tbl3VYr0NXusmTu7X`), Team Assignment (`tblmNxsRPLxsxSNbr`), Assigned Tasks (`tblVB0TYikSrpf2tg`). Assigned Tasks is the table this skill used to call Case Task. Application's link field is still named `Case Task` and stores Assigned Tasks record IDs.
+Write in this order: Application, Applicant, Historical (`tbl3VYr0NXusmTu7X`), Team Assignment (`tblmNxsRPLxsxSNbr`), Assigned Tasks (`tblVB0TYikSrpf2tg`). Assigned Tasks is the table this skill used to call Case Task. Staff is `tbltuqSEdJuKk6763`.
+
+Fields this skill still needs, and whose IDs were not in the schema summary, are `UNRESOLVED_FIELDS` in `scripts/sync_config.py`. No ID was invented for them. They include Client Type, Staff Member, Historical Date, Historical Type, the Assigned Tasks Application link, Applicant Name, Staff Name, and the Automation Log fields. View IDs and the Automation Inventory record ID are also still unknown.
 
 A blank source cell does not authorize erasing an Airtable value.
 

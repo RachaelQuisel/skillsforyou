@@ -147,6 +147,79 @@ class SyncConfigTests(unittest.TestCase):
             "Rfa id",
         ):
             self.assertFalse(self.module.header_is_person_id(header), header)
+        self.assertEqual(
+            self.module.application_field_id_for_csv_header("\ufeffBinti application id"),
+            "fldsxEB5mSLl3MBK6",
+        )
+        self.assertEqual(
+            self.module.application_field_id_for_csv_header("Rfa id"),
+            "fldR9l7Jjm6Gr9yJV",
+        )
+        self.assertEqual(
+            self.module.application_field_for_csv_header("Status"),
+            "Case Status",
+        )
+        self.assertEqual(
+            self.module.application_field_id_for_csv_header("Status"),
+            "fld3HrhY9xh9EWTso",
+        )
+
+    def test_mapped_field_name_is_rejected_as_an_api_key(self) -> None:
+        for item in self.module.GOL_FIELDS:
+            self.assertRegex(item["fieldId"], r"^fld[A-Za-z0-9]{14}$")
+            self.assertNotRegex(item["label"], r"^fld[A-Za-z0-9]{14}$")
+            self.assertNotEqual(item["label"], item["fieldId"])
+        for item in self.module.UNRESOLVED_FIELDS:
+            self.assertNotIn("fieldId", item)
+        binti = self.module.field_id("Application", "Binti ID")
+        rfa = self.module.field_id("Application", "RFA ID")
+        with self.assertRaisesRegex(self.module.ConfigError, "field ID, not a field name"):
+            self.module.build_upsert("Application", ["Binti ID"], {"Binti ID": "9000001"})
+        with self.assertRaisesRegex(self.module.ConfigError, "field ID, not a field name"):
+            self.module.filter_by_formula({"RFA ID": "RFA-100001"})
+        with self.assertRaisesRegex(self.module.ConfigError, "not upsert keys"):
+            self.module.build_upsert(
+                "Application",
+                [self.module.MIGRATION_RECID_FIELD_ID],
+                {self.module.MIGRATION_RECID_FIELD_ID: "recOld"},
+            )
+        with self.assertRaisesRegex(self.module.ConfigError, "not upsert keys"):
+            lookup = self.module.field_id("Applicant", "RFA ID (from Applications)")
+            self.module.build_upsert("Applicant", [lookup], {lookup: "RFA-1"})
+        body = self.module.build_upsert("Application", [binti], {binti: "9000001", rfa: "RFA-100001"})
+        self.assertEqual(body["performUpsert"]["fieldsToMergeOn"], [binti])
+        self.assertTrue(body["returnFieldsByFieldId"])
+        self.assertEqual(set(body["records"][0]["fields"]), {binti, rfa})
+        self.assertNotIn("Binti ID", json.dumps(body["performUpsert"]))
+        formula = body and self.module.filter_by_formula({binti: "9000001"})
+        self.assertEqual(formula, "{fldsxEB5mSLl3MBK6}='9000001'")
+        self.assertNotIn("Binti ID", formula)
+
+    def test_application_lookups_use_separate_field_id_formulas(self) -> None:
+        requests = self.module.application_match_requests("9000001", "RFA-100001")
+        self.assertEqual(len(requests), 2)
+        for request in requests:
+            self.assertTrue(request["returnFieldsByFieldId"])
+            self.assertNotIn("AND(", request["filterByFormula"])
+            self.assertNotIn("Binti ID", request["filterByFormula"])
+            self.assertNotIn("RFA ID", request["filterByFormula"])
+        self.assertIn("{fldsxEB5mSLl3MBK6}", requests[0]["filterByFormula"])
+        self.assertIn("{fldR9l7Jjm6Gr9yJV}", requests[1]["filterByFormula"])
+        blank_rfa = self.module.application_match_requests("9000001", "  ")
+        self.assertEqual(len(blank_rfa), 1)
+        self.assertNotIn("fldR9l7Jjm6Gr9yJV", blank_rfa[0]["filterByFormula"])
+        self.assertIsNone(self.module.applicant_match_request(None))
+        self.assertIsNone(self.module.applicant_match_request("  "))
+        person = self.module.applicant_match_request("person-1")
+        self.assertEqual(person["filterByFormula"], "{flddz0UmEcHGNreOF}='person-1'")
+        self.assertEqual(
+            self.module.link_fields("Application", "Case Task", ["recTask1"]),
+            {"fldFxMTIjCttt2vC9": ["recTask1"]},
+        )
+        self.assertEqual(
+            self.module.link_fields("Historical", "Application", ["recApp1"]),
+            {"fldrhq6h7Y5kUjRBe": ["recApp1"]},
+        )
 
     def test_example_match_keys_are_the_gol_base_contract(self) -> None:
         example = json.loads(EXAMPLE.read_text(encoding="utf-8"))
