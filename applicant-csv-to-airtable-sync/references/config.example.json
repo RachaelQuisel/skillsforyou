@@ -1,10 +1,18 @@
 {
-  "baseId": "appXXXXXXXXXXXXXX",
-  "automationLogTableId": "tblXXXXXXXXXXXXXX",
-  "automationInventoryTableId": "tblXXXXXXXXXXXXXX",
+  "baseId": "appcxLcvRF7dWQOHH",
+  "baseName": "GoL Base",
+  "automationLogTableId": "tblprCx6rMOrVNhrf",
+  "automationInventoryTableId": "tblIrEObjqmmqzAHb",
   "automationInventoryRecordId": "recXXXXXXXXXXXXXX",
   "automationName": "Applicant CSV to Airtable sync",
   "writerId": "applicant-csv-import",
+  "writeOrder": [
+    "Application",
+    "Applicant",
+    "Historical",
+    "Team Assignment",
+    "Assigned Tasks"
+  ],
   "fields": {
     "automationName": "fldXXXXXXXXXXXXX1",
     "outcome": "fldXXXXXXXXXXXXX2",
@@ -22,29 +30,63 @@
     "Northgate Family Agency": "NFA",
     "Riverbend Institute": "RBI"
   },
+  "matchKeys": {
+    "Application": [
+      {
+        "label": "Binti ID",
+        "fieldId": "fldsxEB5mSLl3MBK6",
+        "csvHeader": "Binti application id"
+      },
+      {
+        "label": "RFA ID",
+        "fieldId": "fldR9l7Jjm6Gr9yJV",
+        "csvHeader": "Rfa id"
+      }
+    ],
+    "Applicant": [
+      {
+        "label": "Binti Person ID",
+        "fieldId": "flddz0UmEcHGNreOF",
+        "when": "Only when the CSV or the reviewed person map supplies a person ID. Do not use Applicant external identifier, phone, or email."
+      }
+    ]
+  },
+  "fieldIds": [
+    {"table": "Application", "label": "Binti ID", "fieldId": "fldsxEB5mSLl3MBK6", "role": "upsert", "csvHeader": "Binti application id"},
+    {"table": "Application", "label": "RFA ID", "fieldId": "fldR9l7Jjm6Gr9yJV", "role": "upsert", "csvHeader": "Rfa id"},
+    {"table": "Application", "label": "Case Status", "fieldId": "fld3HrhY9xh9EWTso", "role": "write", "csvHeader": "Status"},
+    {"table": "Application", "label": "Applicants", "fieldId": "fldITF9OcRYSU952a", "role": "link"},
+    {"table": "Application", "label": "Assignment", "fieldId": "fldw87HpCuFHjUdiQ", "role": "link"},
+    {"table": "Application", "label": "Events", "fieldId": "fldTn1SLNUBnELbUT", "role": "link"},
+    {"table": "Application", "label": "Case Task", "fieldId": "fldFxMTIjCttt2vC9", "role": "link"},
+    {"table": "Application", "label": "GOL ERP Base RecID", "fieldId": "fldtVbqKPooJGhu5A", "role": "migration-only"},
+    {"table": "Applicant", "label": "Binti Person ID", "fieldId": "flddz0UmEcHGNreOF", "role": "upsert"},
+    {"table": "Applicant", "label": "RFA ID (from Applications)", "fieldId": "fldnNRWueleJKZWtV", "role": "lookup"},
+    {"table": "Historical", "label": "Application", "fieldId": "fldrhq6h7Y5kUjRBe", "role": "link"}
+  ],
   "tables": {
     "Application": {
-      "tableId": "tblXXXXXXXXXXXXXX",
+      "tableId": "tblle86w7gTHmBsDS",
       "viewId": "viwXXXXXXXXXXXXXX"
     },
     "Applicant": {
-      "tableId": "tblXXXXXXXXXXXXXX",
+      "tableId": "tblZsYxi9G7MVI7p5",
       "viewId": "viwXXXXXXXXXXXXXX"
     },
     "Historical": {
-      "tableId": "tblXXXXXXXXXXXXXX",
+      "tableId": "tbl3VYr0NXusmTu7X",
       "viewId": "viwXXXXXXXXXXXXXX"
     },
     "Team Assignment": {
-      "tableId": "tblXXXXXXXXXXXXXX",
+      "tableId": "tblmNxsRPLxsxSNbr",
       "viewId": "viwXXXXXXXXXXXXXX"
     },
-    "Case Task": {
-      "tableId": "tblXXXXXXXXXXXXXX",
+    "Assigned Tasks": {
+      "tableId": "tblVB0TYikSrpf2tg",
       "viewId": "viwXXXXXXXXXXXXXX"
     },
     "Automation Log": {
-      "tableId": "tblXXXXXXXXXXXXXX",
+      "tableId": "tblprCx6rMOrVNhrf",
       "viewId": "viwXXXXXXXXXXXXXX"
     }
   }

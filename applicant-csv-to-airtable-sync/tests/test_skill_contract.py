@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import importlib.util
 import json
 import os
 import re
@@ -13,6 +14,15 @@ TEXT_SUFFIXES = {".md", ".py", ".json", ".yaml", ".yml", ".csv", ".txt"}
 
 # The scanner excludes itself: its own regexes would otherwise trip its own checks.
 SCANNER = Path(__file__).resolve()
+
+
+def load_sync_config():
+    script = SKILL_ROOT / "scripts" / "sync_config.py"
+    spec = importlib.util.spec_from_file_location("sync_config_contract", script)
+    assert spec and spec.loader
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
 def scannable_files() -> list[Path]:
@@ -224,6 +234,93 @@ class SkillContractTests(ContractAssertions):
         self.assertIn("APPLICANT_SYNC_CONFIG", self.config)
         self.assertIn("exit with code `2`", self.config)
 
+    def test_destination_is_gol_base_with_live_match_keys(self) -> None:
+        contract = load_sync_config()
+        for text, where in (
+            (self.skill, "SKILL.md"),
+            (self.config, "config.md"),
+        ):
+            self.contains(text, contract.GOL_BASE_ID, where)
+            self.contains(text, contract.RETIRED_ERP_BASE_ID, where)
+            self.contains(text, "Assigned Tasks", where)
+            self.contains(text, "Binti ID", where)
+            self.contains(text, "Binti Person ID", where)
+        self.contains(self.config, "RFA ID", "config.md")
+        self.contains(self.config, "returnFieldsByFieldId", "config.md")
+        self.contains(self.config, "fieldsToMergeOn", "config.md")
+        self.contains(self.operations, "returnFieldsByFieldId", "operations.md")
+        self.contains(self.operations, "fieldsToMergeOn", "operations.md")
+        for item in contract.field_catalog():
+            self.contains(self.config, item["fieldId"], "config.md")
+        for item in contract.UNRESOLVED_FIELDS:
+            self.assertNotIn("fieldId", item)
+        self.contains(self.config, "Binti application id", "config.md")
+        self.contains(self.config, "`Rfa id`", "config.md")
+        self.contains(
+            self.config,
+            "Write in this order: Application, Applicant, Historical "
+            "(`tbl3VYr0NXusmTu7X`), Team Assignment (`tblmNxsRPLxsxSNbr`), "
+            "Assigned Tasks (`tblVB0TYikSrpf2tg`).",
+            "config.md",
+        )
+        self.contains(
+            self.config,
+            "A blank source cell does not authorize erasing an Airtable value",
+            "config.md",
+        )
+        self.contains(self.config, "record IDs", "config.md")
+        self.contains(self.skill, "Links store record IDs", "SKILL.md")
+        self.contains(self.skill, "blank cell never overwrites", "SKILL.md")
+        for text, where in ((self.skill, "SKILL.md"), (self.config, "config.md")):
+            self.contains(text, "436 extra events", where)
+            self.contains(text, "rec…:Application Signed", where)
+            self.contains(text, "binti:<id>:application-signed", where)
+            self.contains(text, "prefer RFA ID first, then Binti ID", where)
+            self.contains(
+                text,
+                "the Application record, the event type, and the date, compared as trimmed strings",
+                where,
+            )
+            self.contains(text, "Historical Date and Historical Type field IDs are still unresolved", where)
+            self.contains(text, "Migration Key is named in the schema summary and has no field ID", where)
+        self.contains(self.documents, "Assigned Tasks", "client-documents.md")
+        self.assertNotIn("Case Task", self.documents)
+        self.contains(self.operations, contract.GOL_BASE_ID, "operations.md")
+        self.assertNotIn(contract.RETIRED_ERP_BASE_ID, self.operations)
+        example = json.loads(
+            (SKILL_ROOT / "references" / "config.example.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(example["baseId"], contract.GOL_BASE_ID)
+        self.assertEqual(example["baseName"], contract.GOL_BASE_NAME)
+        self.assertNotIn("Case Task", example["tables"])
+        self.assertEqual(list(example["writeOrder"]), list(contract.WRITE_ORDER))
+        self.assertEqual(example["matchKeys"], contract.gol_match_keys())
+        for name, table_id in contract.TABLE_IDS.items():
+            if name == "Automation Inventory":
+                self.assertEqual(example["automationInventoryTableId"], table_id)
+            elif name == "Automation Log":
+                self.assertEqual(example["tables"][name]["tableId"], table_id)
+                self.assertEqual(example["automationLogTableId"], table_id)
+            else:
+                self.assertEqual(example["tables"][name]["tableId"], table_id)
+        self.assertFalse(
+            (SKILL_ROOT / "scripts" / "run_applicant_airtable_sync.py").exists(),
+            "the project runner is not part of this package",
+        )
+        self.contains(
+            self.config,
+            "does not include `scripts/run_applicant_airtable_sync.py`",
+            "config.md",
+        )
+
+    def test_examples_use_live_airtable_names(self) -> None:
+        for path in (SKILL_ROOT / "examples").iterdir():
+            if path.suffix.lower() not in {".md", ".csv"}:
+                continue
+            text = path.read_text(encoding="utf-8")
+            self.assertNotIn("Case Task", text, path.name)
+            self.assertNotIn("Binti Application ID", text, path.name)
+
     def test_documents_are_sized_for_reading(self) -> None:
         self.assertLess(len(self.config.splitlines()), 90)
         self.assertLess(len(self.skill.splitlines()), 100)
@@ -250,11 +347,17 @@ class SanitizationTests(unittest.TestCase):
     EMAIL = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
     ALLOWED_EMAIL_DOMAINS = ("example.org", "example.com")
 
-    def test_no_real_airtable_identifiers(self) -> None:
+    def test_no_undocumented_airtable_identifiers(self) -> None:
+        allowed = load_sync_config().DOCUMENTED_AIRTABLE_IDS
+        self.assertIn("appcxLcvRF7dWQOHH", allowed)
+        self.assertIn("appp6pbBbaxuOLu2v", allowed)
         for path in scannable_files():
-            match = self.REAL_ID.search(path.read_text(encoding="utf-8"))
-            if match:
-                self.fail(f"{path.name} holds what looks like a real Airtable id: {match.group()}")
+            for match in self.REAL_ID.finditer(path.read_text(encoding="utf-8")):
+                if match.group() not in allowed:
+                    self.fail(
+                        f"{path.name} holds an Airtable id that is not part of the "
+                        f"GoL Base contract: {match.group()}"
+                    )
 
     def test_no_credentials(self) -> None:
         for path in scannable_files():
@@ -288,18 +391,19 @@ class SanitizationTests(unittest.TestCase):
             for term in terms:
                 self.assertNotIn(term.lower(), content, f"{path.name} holds a denied term")
 
-    def test_config_example_holds_only_placeholders(self) -> None:
+    def test_config_example_points_at_gol_base_and_leaves_unknown_ids_blank(self) -> None:
+        contract = load_sync_config()
         config = json.loads(
             (SKILL_ROOT / "references" / "config.example.json").read_text(encoding="utf-8")
         )
-        ids = [
-            config["baseId"],
-            config["automationLogTableId"],
-            config["automationInventoryRecordId"],
-            *config["fields"].values(),
-        ]
-        for value in ids:
+        self.assertEqual(config["baseId"], contract.GOL_BASE_ID)
+        self.assertNotIn(contract.RETIRED_ERP_BASE_ID, json.dumps(config))
+        self.assertRegex(config["automationInventoryRecordId"], r"X{4,}")
+        for value in config["fields"].values():
             self.assertRegex(value, r"X{4,}", f"{value} is not a placeholder")
+        for name, entry in config["tables"].items():
+            self.assertNotRegex(entry["tableId"], r"X{4,}", f"{name} table id should be live")
+            self.assertRegex(entry["viewId"], r"X{4,}", f"{name} view id is still unknown")
 
     def test_sample_csv_is_fictional_and_covers_the_hard_cases(self) -> None:
         with (SKILL_ROOT / "references" / "sample-applicant-export.csv").open(

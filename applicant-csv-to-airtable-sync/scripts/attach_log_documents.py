@@ -155,6 +155,8 @@ def fetch_log_records(
             json.dumps(filters, separators=(",", ":")),
             "--fieldIds",
             json.dumps([run_key_field_id, attachment_field_id]),
+            "--returnFieldsByFieldId",
+            "true",
             "--pageSize",
             "3",
         ],

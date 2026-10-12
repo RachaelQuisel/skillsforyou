@@ -66,7 +66,7 @@ Renewal IDs without that evidence were not accepted. They appear in the review C
 | Applicant | `tblApl01` | 50 | 62 | 183 |
 | Historical | `tblHis01` | 124 | 0 | 188 |
 | Team Assignment | `tblTeam01` | 38 | 0 | 65 |
-| Case Task | `tblTask01` | 0 | 30 | 182 |
+| Assigned Tasks | `tblTask01` | 0 | 30 | 182 |
 | Automation Log | `tblLog01` | 0 | 0 | 1 |
 
 "Records with changes observed" is higher than created plus updated in some tables. Two reasons: calculated fields recalculate on their own, and the before and after snapshots are separate reads, so other activity in the base can land between them. Only confirmed writes are attributed to this sync.
@@ -79,7 +79,7 @@ The Automation Log row is this run's own log entry. It is not a business record.
 
 | Table | Field | Field ID | Type |
 | --- | --- | --- | --- |
-| Application | Binti Application ID | `fldAppBid` | Single line text |
+| Application | Binti ID | `fldAppBid` | Single line text |
 | Application | Status | `fldAppSts` | Single select |
 | Application | Client Type | `fldAppCli` | Single select |
 | Application | Renewal Due Date | `fldAppRdd` | Date |
@@ -87,7 +87,7 @@ The Automation Log row is this run's own log entry. It is not a business record.
 | Applicant | Email | `fldAplEml` | Email |
 | Historical | Status Change Date | `fldHisDte` | Date |
 | Team Assignment | Staff Member | `fldTeaStf` | Linked record |
-| Case Task | Due Date | `fldTskDue` | Date |
+| Assigned Tasks | Due Date | `fldTskDue` | Date |
 
 ### Field type guide
 
