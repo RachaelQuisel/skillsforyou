@@ -271,6 +271,18 @@ class SkillContractTests(ContractAssertions):
         self.contains(self.config, "record IDs", "config.md")
         self.contains(self.skill, "Links store record IDs", "SKILL.md")
         self.contains(self.skill, "blank cell never overwrites", "SKILL.md")
+        for text, where in ((self.skill, "SKILL.md"), (self.config, "config.md")):
+            self.contains(text, "436 extra events", where)
+            self.contains(text, "rec…:Application Signed", where)
+            self.contains(text, "binti:<id>:application-signed", where)
+            self.contains(text, "prefer RFA ID first, then Binti ID", where)
+            self.contains(
+                text,
+                "the Application record, the event type, and the date, compared as trimmed strings",
+                where,
+            )
+            self.contains(text, "Historical Date and Historical Type field IDs are still unresolved", where)
+            self.contains(text, "Migration Key is named in the schema summary and has no field ID", where)
         self.contains(self.documents, "Assigned Tasks", "client-documents.md")
         self.assertNotIn("Case Task", self.documents)
         self.contains(self.operations, contract.GOL_BASE_ID, "operations.md")

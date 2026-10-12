@@ -28,7 +28,7 @@ Never search a downloads folder, the workspace, or prior runs for candidate CSVs
 ## Read the current implementation
 
 - Read [config.md](references/config.md) for the fixed targets and data rules.
-- The destination is GoL Base `appcxLcvRF7dWQOHH`. The retired GOL ERP base `appp6pbBbaxuOLu2v` is rejected. Upsert Application on field IDs `fldsxEB5mSLl3MBK6` (Binti ID) and `fldR9l7Jjm6Gr9yJV` (RFA ID). Upsert Applicant on `flddz0UmEcHGNreOF` (Binti Person ID) when a person ID is supplied. `filterByFormula` and `fieldsToMergeOn` use those IDs, and reads set `returnFieldsByFieldId`. Write Application, then Applicant, then Historical, then Team Assignment, then Assigned Tasks. A blank cell never overwrites a stored value. Links store record IDs.
+- The destination is GoL Base `appcxLcvRF7dWQOHH`. The retired GOL ERP base `appp6pbBbaxuOLu2v` is rejected. For Application matching, prefer a nonblank RFA ID (`fldR9l7Jjm6Gr9yJV`) first, then Binti ID (`fldsxEB5mSLl3MBK6`). Renewals get a new Binti application ID. Upsert Applicant on `flddz0UmEcHGNreOF` (Binti Person ID) when a person ID is supplied. `filterByFormula` and `fieldsToMergeOn` use those IDs, and reads set `returnFieldsByFieldId`. Write Application, then Applicant, then Historical, then Team Assignment, then Assigned Tasks. A blank cell never overwrites a stored value. Links store record IDs.
 - Read [operations.md](references/operations.md) for commands, writer checks, and outcomes.
 - Read [client-documents.md](references/client-documents.md) before drafting or refreshing reports.
 - Use the current project's `scripts/run_applicant_airtable_sync.py` and reconciliation engine. Inspect applicable `AGENTS.md`, current code, tests, and relevant trigger configuration. Keep production sync code in that project.
@@ -44,6 +44,10 @@ Never search a downloads folder, the workspace, or prior runs for candidate CSVs
 5. After the writer check passes, create one Automation Log with the run key. Capture live schema and starting records. Apply each source once with the same log link. Preserve row conflicts while continuing valid unrelated changes.
 6. Read the affected records again. Require a fresh comparison. Derive confirmed writes and unresolved rows from current receipts and readback. Do not retry when no new evidence or valid pending change exists.
 7. For an Apply that passed the writer check, produce and verify the client documents under client-documents.md. Update the same log. Mark Succeeded only after reconciliation and attachment checks pass. Preserve Failed when unresolved rows remain.
+
+## Historical duplicates
+
+In GoL Base, the real duplicates are in Historical (`tbl3VYr0NXusmTu7X`): 436 extra events. Migrated events use a Migration Key like `rec…:Application Signed`. Binti-import events use `binti:<id>:application-signed`. The same milestone is written twice. Renewals get a new Binti application ID. For Application matching, prefer RFA ID first, then Binti ID. For Historical, the event key is the Application record, the event type, and the date, compared as trimmed strings. Historical Date and Historical Type field IDs are still unresolved. Migration Key is named in the schema summary and has no field ID.
 
 ## Annotated source CSVs
 

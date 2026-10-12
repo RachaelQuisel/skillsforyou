@@ -30,8 +30,8 @@ Reads set `returnFieldsByFieldId` to true. `filterByFormula` uses `{fieldId}` an
 
 | CSV header, kept as Binti writes it | Table | Label | Field ID | API use |
 |---|---|---|---|---|
-| `Binti application id` | Application `tblle86w7gTHmBsDS` | Binti ID | `fldsxEB5mSLl3MBK6` | Upsert key, looked up on its own |
-| `Rfa id` | Application | RFA ID | `fldR9l7Jjm6Gr9yJV` | Upsert key, looked up on its own |
+| `Rfa id` | Application `tblle86w7gTHmBsDS` | RFA ID | `fldR9l7Jjm6Gr9yJV` | Upsert key, looked up first |
+| `Binti application id` | Application | Binti ID | `fldsxEB5mSLl3MBK6` | Upsert key, looked up second |
 | `Status` | Application | Case Status | `fld3HrhY9xh9EWTso` | Write |
 |  | Application | Applicants | `fldITF9OcRYSU952a` | Link, record IDs |
 |  | Application | Assignment | `fldw87HpCuFHjUdiQ` | Link, record IDs |
@@ -42,13 +42,17 @@ Reads set `returnFieldsByFieldId` to true. `filterByFormula` uses `{fieldId}` an
 |  | Applicant | RFA ID (from Applications) | `fldnNRWueleJKZWtV` | Lookup. Not an upsert key |
 |  | Historical `tbl3VYr0NXusmTu7X` | Application | `fldrhq6h7Y5kUjRBe` | Link, record IDs |
 
-Airtable ANDs every ID in one `fieldsToMergeOn` list, so each lookup is its own formula and a write merges on the one field ID that matched. A blank `Rfa id` stays out of both. GoL Base has neither `Binti application id` nor `Rfa id`. Those were GOL ERP field names, and one copy of `Binti application id` began with U+FEFF.
+Airtable ANDs every ID in one `fieldsToMergeOn` list, so each lookup is its own formula and a write merges on the one field ID that matched. Look up a nonblank RFA ID first and Binti ID second. A blank RFA stays out of the formula. Renewals get a new Binti application ID. GoL Base has neither `Binti application id` nor `Rfa id`. Those were GOL ERP field names, and one copy of `Binti application id` began with U+FEFF.
 
 Upsert Applicant on `flddz0UmEcHGNreOF` only when a person ID is supplied. The sample export has no person-id column. `Applicant external identifier` and `Co-applicant external identifier` are not that key. Never match a person by phone or email.
 
 Write in this order: Application, Applicant, Historical (`tbl3VYr0NXusmTu7X`), Team Assignment (`tblmNxsRPLxsxSNbr`), Assigned Tasks (`tblVB0TYikSrpf2tg`). Assigned Tasks is the table this skill used to call Case Task. Staff is `tbltuqSEdJuKk6763`.
 
-Fields this skill still needs, and whose IDs were not in the schema summary, are `UNRESOLVED_FIELDS` in `scripts/sync_config.py`. No ID was invented for them. They include Client Type, Staff Member, Historical Date, Historical Type, the Assigned Tasks Application link, Applicant Name, Staff Name, and the Automation Log fields. View IDs and the Automation Inventory record ID are also still unknown.
+Fields this skill still needs, and whose IDs were not in the schema summary, are `UNRESOLVED_FIELDS` in `scripts/sync_config.py`. No ID was invented for them. They include Client Type, Staff Member, Historical Date, Historical Type, Migration Key, the Assigned Tasks Application link, Applicant Name, Staff Name, and the Automation Log fields. View IDs and the Automation Inventory record ID are also still unknown.
+
+## Historical event key
+
+In GoL Base, the real duplicates are in Historical (`tbl3VYr0NXusmTu7X`): 436 extra events. Migrated events use a Migration Key like `rec…:Application Signed`. Binti-import events use `binti:<id>:application-signed`. The same milestone is written twice. Migration Key is named in the schema summary and has no field ID. Historical Date and Historical Type field IDs are still unresolved. The event key is the Application record, the event type, and the date, compared as trimmed strings. It is not a raw Binti ID string. `historical_event_key` in `scripts/sync_config.py` builds that key and does not call Airtable.
 
 A blank source cell does not authorize erasing an Airtable value.
 
@@ -64,7 +68,7 @@ See [sample-applicant-export.csv](sample-applicant-export.csv) for the full head
 
 ## Identity and staff
 
-- Prefer unique stable source identifiers. Upsert Application on `Binti ID` and `RFA ID`. Use the existing RFA case only when the match is unique. Never replace a disputed stable identifier.
+- Prefer unique stable source identifiers. For Application matching, prefer RFA ID first, then Binti ID. Use the existing RFA case only when the match is unique. Never replace a disputed stable identifier.
 - Match full normalized names exactly when the current code permits name evidence. Do not infer aliases, use surname tokens, accept spelling similarity, or fall back to an unrelated contact. A reviewed application-and-role mapping may provide a `Binti Person ID`. It does not create a name alias. Never match an Applicant by phone or email.
 - Preserve ambiguous Applicant links and values. Report the candidate records and related Application. Do not merge, guess, or create a duplicate to avoid review.
 - A unique source `Binti application id` is sufficient when the source `Rfa id` is blank. Leave `RFA ID` blank.

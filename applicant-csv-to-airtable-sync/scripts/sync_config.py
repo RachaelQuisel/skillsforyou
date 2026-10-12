@@ -99,6 +99,7 @@ UNRESOLVED_FIELDS: tuple[dict[str, str], ...] = (
     {"table": "Team Assignment", "label": "Staff Member", "reason": "A verified staff link is written here. The summary names Staff Member and has no field ID."},
     {"table": "Historical", "label": "Date", "reason": "A renewal status-change event needs its date. The summary names Date and has no field ID."},
     {"table": "Historical", "label": "Type", "reason": "A renewal status-change event needs its type. The summary names Type and has no field ID."},
+    {"table": "Historical", "label": "Migration Key", "reason": "The schema summary names Migration Key and has no field ID. Do not match events on that string."},
     {"table": "Assigned Tasks", "label": "Application", "reason": "An Assigned Tasks row links back to Application. The summary names Application and has no field ID."},
     {"table": "Applicant", "label": "Name", "reason": "Exact name evidence reads the primary Name field. The summary has no field ID."},
     {"table": "Staff", "label": "Name", "reason": "Staff matching reads the primary Name field. The summary has no field ID."},
@@ -241,18 +242,14 @@ def build_upsert(
 
 
 def application_match_requests(binti_id: str, rfa_id: str) -> list[dict[str, Any]]:
-    """Look up each Application key on its own. A blank RFA is not part of the formula."""
+    """Look up a nonblank RFA ID first, then Binti ID. Each key is its own formula.
+
+    Airtable ANDs every ID in one fieldsToMergeOn list, so a blank RFA stays out
+    instead of being combined with Binti ID. Renewals receive a new Binti application ID.
+    """
     binti_field = field_id("Application", "Binti ID")
     rfa_field = field_id("Application", "RFA ID")
     requests: list[dict[str, Any]] = []
-    if binti_id.strip():
-        requests.append(
-            build_list_request(
-                "Application",
-                filter_by_formula({binti_field: binti_id.strip()}),
-                [binti_field, rfa_field],
-            )
-        )
     if rfa_id.strip():
         requests.append(
             build_list_request(
@@ -261,7 +258,36 @@ def application_match_requests(binti_id: str, rfa_id: str) -> list[dict[str, Any
                 [binti_field, rfa_field],
             )
         )
+    if binti_id.strip():
+        requests.append(
+            build_list_request(
+                "Application",
+                filter_by_formula({binti_field: binti_id.strip()}),
+                [binti_field, rfa_field],
+            )
+        )
     return requests
+
+
+def historical_event_key(
+    application_record_id: str, event_type: str, event_date: str
+) -> tuple[str, str, str]:
+    """Build the Historical match key from Application record, event type, and date.
+
+    Each part is compared as a trimmed string. This is not a Migration Key.
+    Migrated events use a shape like ``rec…:Application Signed``. Binti-import
+    events use ``binti:<id>:application-signed``. Date and Type field IDs are
+    still unresolved, and Migration Key has no field ID. This does not call Airtable.
+    """
+    parts = tuple(
+        str(value).strip()
+        for value in (application_record_id, event_type, event_date)
+    )
+    if any(part == "" for part in parts):
+        raise ConfigError(
+            "A Historical event key needs an Application record, an event type, and a date."
+        )
+    return parts
 
 
 def applicant_match_request(person_id: str | None) -> dict[str, Any] | None:

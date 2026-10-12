@@ -203,11 +203,18 @@ class SyncConfigTests(unittest.TestCase):
             self.assertNotIn("AND(", request["filterByFormula"])
             self.assertNotIn("Binti ID", request["filterByFormula"])
             self.assertNotIn("RFA ID", request["filterByFormula"])
-        self.assertIn("{fldsxEB5mSLl3MBK6}", requests[0]["filterByFormula"])
-        self.assertIn("{fldR9l7Jjm6Gr9yJV}", requests[1]["filterByFormula"])
+        self.assertIn("{fldR9l7Jjm6Gr9yJV}", requests[0]["filterByFormula"])
+        self.assertNotIn("{fldsxEB5mSLl3MBK6}", requests[0]["filterByFormula"])
+        self.assertIn("{fldsxEB5mSLl3MBK6}", requests[1]["filterByFormula"])
+        self.assertNotIn("{fldR9l7Jjm6Gr9yJV}", requests[1]["filterByFormula"])
         blank_rfa = self.module.application_match_requests("9000001", "  ")
         self.assertEqual(len(blank_rfa), 1)
+        self.assertIn("{fldsxEB5mSLl3MBK6}", blank_rfa[0]["filterByFormula"])
         self.assertNotIn("fldR9l7Jjm6Gr9yJV", blank_rfa[0]["filterByFormula"])
+        blank_binti = self.module.application_match_requests("  ", "RFA-100001")
+        self.assertEqual(len(blank_binti), 1)
+        self.assertIn("{fldR9l7Jjm6Gr9yJV}", blank_binti[0]["filterByFormula"])
+        self.assertNotIn("fldsxEB5mSLl3MBK6", blank_binti[0]["filterByFormula"])
         self.assertIsNone(self.module.applicant_match_request(None))
         self.assertIsNone(self.module.applicant_match_request("  "))
         person = self.module.applicant_match_request("person-1")
@@ -220,6 +227,28 @@ class SyncConfigTests(unittest.TestCase):
             self.module.link_fields("Historical", "Application", ["recApp1"]),
             {"fldrhq6h7Y5kUjRBe": ["recApp1"]},
         )
+
+    def test_historical_event_key_uses_record_type_and_date(self) -> None:
+        key = self.module.historical_event_key(
+            " recApp1 ", " Application Signed ", " 2024-01-02 "
+        )
+        self.assertEqual(key, ("recApp1", "Application Signed", "2024-01-02"))
+        self.assertEqual(
+            key,
+            self.module.historical_event_key("recApp1", "Application Signed", "2024-01-02"),
+        )
+        self.assertNotIn("binti:", key)
+        self.assertNotEqual(key[0], "binti:9000001:application-signed")
+        with self.assertRaisesRegex(self.module.ConfigError, "Historical event key"):
+            self.module.historical_event_key("recApp1", "  ", "2024-01-02")
+        unresolved = {
+            item["label"]: item
+            for item in self.module.UNRESOLVED_FIELDS
+            if item["table"] == "Historical"
+        }
+        for label in ("Date", "Type", "Migration Key"):
+            self.assertIn(label, unresolved)
+            self.assertNotIn("fieldId", unresolved[label])
 
     def test_example_match_keys_are_the_gol_base_contract(self) -> None:
         example = json.loads(EXAMPLE.read_text(encoding="utf-8"))
