@@ -1,34 +1,17 @@
-# Gem Miner
+# Find memorable or amusing lines from the day's conversations and save the selected quotes
 
-## Trigger
+This skill helps you find memorable or amusing lines from the day's conversations and save the selected quotes.
 
-I use Gem Miner to find memorable lines in messages I supply or explicitly authorize the assistant to read.
+## What to share
 
-## Inputs
+Describe the result you need and share the relevant files, notes, or examples you want this skill to use.
 
-- Supply a message batch and identify the speaker whose words should be reviewed.
-- Include timestamps or source references when available.
+## How to start
 
-## What happens
+Select this skill and describe your request. The assistant uses the information and tools available in that conversation.
 
-1. The assistant reviews only the authorized material.
-2. It selects a small set of memorable lines and preserves the exact wording.
-3. It separates quotes from optional captions.
-4. It excludes sensitive disclosures and checks for duplicate selections.
+## Detailed guidance
 
-## Outputs
+The [working instructions](SKILL.md) describe the skill's steps, required tools, and limits.
 
-- Each candidate includes its quote, source, category, and a short reason for selection.
-- No qualifying messages is a valid result.
-
-## Try it
-
-```text
-Use Gem Miner on this fictional message batch. Keep quotes exact and return candidates for review. Do not publish or upload anything.
-```
-
-See the [fictional example](examples/sample-gems.md).
-
-## Limits
-
-This public version includes no private history reader, credentials, automatic upload, or publishing integration. It returns material for review. The user chooses whether to share it.
+The [technical guide and examples](TECHNICAL-GUIDE.md) retain the earlier detailed documentation.

@@ -1,9 +1,23 @@
 ---
 name: file-naming-convention
+version: 1.0.1
 description: "File naming convention. Use when a project document needs to be saved or an unclear filename needs to be replaced."
 ---
 
 # File naming convention
+
+## Purpose in plain English
+
+This skill helps you give saved client documents consistent names so their purpose and date are easy to recognize.
+
+## How to explain the result
+
+For a client-facing explanation, use ordinary words and the requested format. Explain unfamiliar abbreviations. Name what each number counts and explain its practical meaning. Keep internal identifiers out of the explanation. Keep necessary technical details in the working steps and technical references.
+
+## Following the process
+
+Use the process below. Preserve its conditions, commands, checks, and approval rules. Use information the user already supplied. Follow the existing questions or stopping rules when required information is missing.
+
 
 ## Inputs
 

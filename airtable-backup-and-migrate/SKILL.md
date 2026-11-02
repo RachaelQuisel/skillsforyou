@@ -1,9 +1,23 @@
 ---
 name: airtable-backup-and-migrate
+version: 1.0.1
 description: "Airtable backup. Use when run it when you need a snapshot of a base's data and structure."
 ---
 
 # Airtable backup
+
+## Purpose in plain English
+
+This skill helps you save a complete copy of an Airtable workspace, including its structure, information, and attached files.
+
+## How to explain the result
+
+For a client-facing explanation, use ordinary words and the requested format. Explain unfamiliar abbreviations. Name what each number counts and explain its practical meaning. Keep internal identifiers out of the explanation. Keep necessary technical details in the working steps and technical references.
+
+## Following the process
+
+Use the process below. Preserve its conditions, commands, checks, and approval rules. Use information the user already supplied. Follow the existing questions or stopping rules when required information is missing.
+
 
 ## Inputs
 

@@ -1,36 +1,17 @@
-# KPI report
+# Turn a discovery conversation into a reference document explaining which business results should be measured
 
-## Trigger
+This skill helps you turn a discovery conversation into a reference document explaining which business results should be measured.
 
-I use this skill to turn discovery notes into a measurement plan. A key performance indicator, or KPI, is a measure used to track progress toward a goal.
+## What to share
 
-A discovery transcript needs to inform what a system should measure.
+Share the source notes or files, identify the reader, and describe the document or explanation you need.
 
-## Inputs
+## How to start
 
-- The transcript and the project context.
-- The stated goals, existing tools, and available baseline numbers.
+Select this skill and describe your request. The assistant uses the information and tools available in that conversation.
 
-## What happens
+## Detailed guidance
 
-1. Identify the business goals and problems described in the transcript.
-2. Extract the measures the speaker explicitly requested.
-3. Propose additional measures with a reason and a confidence level.
-4. Identify the source, review frequency, and baseline for each measure.
-5. Record missing definitions, ownership questions, and implications for the build.
+The [working instructions](SKILL.md) describe the skill's steps, required tools, and limits.
 
-## Outputs
-
-An internal planning document with stated measures, recommendations, open questions, reporting ownership, and notes for system design.
-
-## Try it with a fictional example
-
-Once the source skill is installed and configured, use a request like this:
-
-```text
-Use kpi-report on this fictional equipment-rental discovery transcript. Separate requested metrics from recommendations. Do not invent baseline numbers.
-```
-
-## Setup and limits
-
-The report does not calculate live performance. Missing baselines stay unestablished. The standalone skill produces an internal document; review it before adapting it for an external audience. Supply a local output path when you want a saved file.
+The [technical guide and examples](TECHNICAL-GUIDE.md) retain the earlier detailed documentation.

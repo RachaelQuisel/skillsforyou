@@ -1,9 +1,23 @@
 ---
 name: client-doc-changelog
+version: 1.0.1
 description: "Client document changelog. Use when a completed change needs a dated entry in the project changelog."
 ---
 
 # Client document changelog
+
+## Purpose in plain English
+
+This skill helps you record what changed in a client project and when the change was delivered.
+
+## How to explain the result
+
+For a client-facing explanation, use ordinary words and the requested format. Explain unfamiliar abbreviations. Name what each number counts and explain its practical meaning. Keep internal identifiers out of the explanation. Keep necessary technical details in the working steps and technical references.
+
+## Following the process
+
+Use the process below. Preserve its conditions, commands, checks, and approval rules. Use information the user already supplied. Follow the existing questions or stopping rules when required information is missing.
+
 
 ## Inputs
 

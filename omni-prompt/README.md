@@ -1,38 +1,17 @@
-# Omni prompt
+# Write a clear request for Airtable Omni to build or improve an interface using existing information
 
-## Trigger
+This skill helps you write a clear request for Airtable Omni to build or improve an interface using existing information.
 
-I use this skill to write Airtable prompts with explicit inputs, a clear output format, and instructions for missing data.
+## What to share
 
-An AI field, interface, or other Omni build instruction needs a new or revised prompt.
+Describe the result you need and share the relevant files, notes, or examples you want this skill to use.
 
-## Inputs
+## How to start
 
-- The intended task and audience.
-- Verified field and table names, or clearly labeled proposed names.
-- The required output type, format, and missing-data behavior.
+Select this skill and describe your request. The assistant uses the information and tools available in that conversation.
 
-## What happens
+## Detailed guidance
 
-1. Identify whether the request is for an AI field or an interface change.
-2. Verify relevant schema names when an existing base is involved.
-3. Define the assistant’s role and explain how each input is used.
-4. Number the required results and state the format limits.
-5. Specify what to do when the input is blank or ambiguous.
-6. Return self-contained prompt blocks.
+The [working instructions](SKILL.md) describe the skill's steps, required tools, and limits.
 
-## Outputs
-
-Copy-pasteable prompts. AI field blocks include Field name, Custom instructions, Input fields, Output field type, and Model.
-
-## Try it with a fictional example
-
-Once the source skill is installed and configured, use a request like this:
-
-```text
-Use omni-prompt to draft an AI field prompt for a fictional maintenance request. Use {Request description} and {Requested date}. Do not infer a deadline when none is given.
-```
-
-## Setup and limits
-
-Drafting a prompt does not run it or authorize changes to a base. Model selection and current product capabilities need verification when they affect the prompt. Historical capability notes in the source package should not be treated as current product documentation.
+The [technical guide and examples](TECHNICAL-GUIDE.md) retain the earlier detailed documentation.

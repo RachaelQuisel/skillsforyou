@@ -1,9 +1,23 @@
 ---
 name: eval-creation
+version: 1.0.1
 description: "Evaluation creation. Use when use this skill when a repeated task needs success criteria, a definition of done, or rules for handling failed runs."
 ---
 
 # Evaluation creation
+
+## Purpose in plain English
+
+This skill helps you write clear pass-or-fail checks for whether a process or automation achieves its goal.
+
+## How to explain the result
+
+For a client-facing explanation, use ordinary words and the requested format. Explain unfamiliar abbreviations. Name what each number counts and explain its practical meaning. Keep internal identifiers out of the explanation. Keep necessary technical details in the working steps and technical references.
+
+## Following the process
+
+Use the process below. Preserve its conditions, commands, checks, and approval rules. Use information the user already supplied. Follow the existing questions or stopping rules when required information is missing.
+
 
 ## Inputs
 

@@ -1,37 +1,17 @@
-# Client document changelog
+# Record what changed in a client project and when the change was delivered
 
-## Trigger
+This skill helps you record what changed in a client project and when the change was delivered.
 
-I use this skill to record what shipped and what changed for the people using it.
+## What to share
 
-A completed change needs a dated entry in the project changelog.
+Share the source notes or files, identify the reader, and describe the document or explanation you need.
 
-## Inputs
+## How to start
 
-- The project and build name.
-- The shipped change and its user-visible effect.
-- The existing changelog, when one exists.
+Select this skill and describe your request. The assistant uses the information and tools available in that conversation.
 
-## What happens
+## Detailed guidance
 
-1. Confirm the project and build.
-2. Capture what shipped and what changed for the user.
-3. Read the existing file.
-4. Add a new date at the top or append under the matching date.
-5. Preserve the earlier entries and verify placement.
+The [working instructions](SKILL.md) describe the skill's steps, required tools, and limits.
 
-## Outputs
-
-An updated local `changelog.md` file.
-
-## Try it with a fictional example
-
-Once the source skill is installed and configured, use a request like this:
-
-```text
-Use client-doc-changelog for a fictional reservation system. The cancellation form is now live, and users can release equipment without emailing support.
-```
-
-## Setup and limits
-
-The changelog records shipped work. Drafts and planned changes belong elsewhere. This skill writes locally; GitHub publication is a separate action through client-doc-push. Supply the local project folder before saving.
+The [technical guide and examples](TECHNICAL-GUIDE.md) retain the earlier detailed documentation.

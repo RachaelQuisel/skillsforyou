@@ -1,9 +1,23 @@
 ---
 name: normalize-csvs-for-airtable
+version: 1.0.1
 description: "Normalize CSVs for Airtable. Use when use it when source CSV files have different column layouts, inconsistent formatting, or values that need to match an existing Airtable base."
 ---
 
 # Normalize CSVs for Airtable
+
+## Purpose in plain English
+
+This skill helps you combine inconsistent spreadsheet exports into a clean file ready for Airtable import.
+
+## How to explain the result
+
+For a client-facing explanation, use ordinary words and the requested format. Explain unfamiliar abbreviations. Name what each number counts and explain its practical meaning. Keep internal identifiers out of the explanation. Keep necessary technical details in the working steps and technical references.
+
+## Following the process
+
+Use the process below. Preserve its conditions, commands, checks, and approval rules. Use information the user already supplied. Follow the existing questions or stopping rules when required information is missing.
+
 
 ## Inputs
 

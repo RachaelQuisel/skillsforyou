@@ -1,38 +1,17 @@
-# Client user stories
+# Describe who uses a client's system and what each person needs it to help them accomplish
 
-## Trigger
+This skill helps you describe who uses a client's system and what each person needs it to help them accomplish.
 
-I use this skill to describe what each type of user needs the system to do and why that matters to their work.
+## What to share
 
-A build needs user stories or a clearer account of who uses it.
+Share the source notes or files, identify the reader, and describe the document or explanation you need.
 
-## Inputs
+## How to start
 
-- The project and build name.
-- The people or roles involved.
-- Their goals, current friction, and needed system behavior.
+Select this skill and describe your request. The assistant uses the information and tools available in that conversation.
 
-## What happens
+## Detailed guidance
 
-1. Identify the relevant roles.
-2. Ask focused questions about the work each role needs to complete.
-3. Connect each story to a purpose or outcome.
-4. Group the stories by role.
-5. Mark unanswered questions instead of inventing users or needs.
-6. Save or revise the local document.
+The [working instructions](SKILL.md) describe the skill's steps, required tools, and limits.
 
-## Outputs
-
-A `user-stories.md` file organized by persona.
-
-## Try it with a fictional example
-
-Once the source skill is installed and configured, use a request like this:
-
-```text
-Use client-doc-user-stories for a fictional equipment service. Cover the borrower who reserves an item and the coordinator who approves high-value reservations.
-```
-
-## Setup and limits
-
-The skill captures user needs. It does not establish that the implementation meets them. Existing content should be preserved where it remains accurate. Publication is separate, and the local destination must be supplied.
+The [technical guide and examples](TECHNICAL-GUIDE.md) retain the earlier detailed documentation.

@@ -1,9 +1,23 @@
 ---
 name: plain-english-project-communication
+version: 1.0.1
 description: "Plain-English project communication. Use when a status update, dashboard label, report, or project explanation needs to be understandable to its audience."
 ---
 
 # Plain-English project communication
+
+## Purpose in plain English
+
+This skill helps you explain project work so the reader understands the purpose, numbers, and practical meaning without technical background.
+
+## How to explain the result
+
+For a client-facing explanation, use ordinary words and the requested format. Explain unfamiliar abbreviations. Name what each number counts and explain its practical meaning. Keep internal identifiers out of the explanation. Keep necessary technical details in the working steps and technical references.
+
+## Following the process
+
+Use the process below. Preserve its conditions, commands, checks, and approval rules. Use information the user already supplied. Follow the existing questions or stopping rules when required information is missing.
+
 
 ## Inputs
 

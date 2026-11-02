@@ -1,9 +1,23 @@
 ---
 name: execute-and-reconcile-pain-points
+version: 1.0.1
 description: "Execute and reconcile pain points. Use when use this skill when approved implementation work also needs an update in the system that tracks the problem."
 ---
 
 # Execute and reconcile pain points
+
+## Purpose in plain English
+
+This skill helps you complete approved work and update the system that tracks the business problems it addresses.
+
+## How to explain the result
+
+For a client-facing explanation, use ordinary words and the requested format. Explain unfamiliar abbreviations. Name what each number counts and explain its practical meaning. Keep internal identifiers out of the explanation. Keep necessary technical details in the working steps and technical references.
+
+## Following the process
+
+Use the process below. Preserve its conditions, commands, checks, and approval rules. Use information the user already supplied. Follow the existing questions or stopping rules when required information is missing.
+
 
 ## Inputs
 

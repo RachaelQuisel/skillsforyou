@@ -1,39 +1,17 @@
-# Postmortem
+# Prepare or review a monthly reflection on a client's work and handle the requested follow-up
 
-## Trigger
+This skill helps you prepare or review a monthly reflection on a client's work and handle the requested follow-up.
 
-I use this skill to ask consistent monthly reflection questions across active projects. It keeps the prompt short and checks whether it was already posted.
+## What to share
 
-A monthly reflection needs to be previewed, sent, audited, or scheduled.
+Describe the result you need and share the relevant files, notes, or examples you want this skill to use.
 
-## Inputs
+## How to start
 
-- The reporting month and configured time zone.
-- Active project records and authoritative Slack routing.
-- The question bank and access to channel history.
+Select this skill and describe your request. The assistant uses the information and tools available in that conversation.
 
-## What happens
+## Detailed guidance
 
-1. Choose preview, send, audit, or schedule mode.
-2. Find eligible projects and resolve one internal destination per client.
-3. Select three relevant questions from the included question bank.
-4. Check channel history for the same monthly header.
-5. Skip existing posts and unresolved destinations.
-6. Send only in an explicitly authorized send run.
-7. Report posted, already posted, missing-routing, ambiguous-routing, and failed results.
+The [working instructions](SKILL.md) describe the skill's steps, required tools, and limits.
 
-## Outputs
-
-A preview, an audit report, or authorized monthly reflection posts with per-destination results.
-
-## Try it with a fictional example
-
-Once the source skill is installed and configured, use a request like this:
-
-```text
-Use postmortem in preview mode for a fictional active-project roster. Show the routing and three questions. Do not post messages.
-```
-
-## Setup and limits
-
-Preview is the default. Missing channel history blocks sending because duplicate checks cannot be completed. Scheduling is handled by the host product. The included public question bank is a generic replacement. Supply your own review questions when needed.
+The [technical guide and examples](TECHNICAL-GUIDE.md) retain the earlier detailed documentation.

@@ -1,9 +1,23 @@
 ---
 name: dissonance-radar
+version: 1.0.1
 description: Find useful questions missed in a conversation or across related transcripts. Use for a transcript review, end-of-day reflection, or questions such as "what am I missing?", "what didn't I ask?", or "what changed between these meetings?" Return evidence-backed questions rather than diagnoses or outbound messages.
 ---
 
 # Dissonance Radar
+
+## Purpose in plain English
+
+This skill helps you review recent conversations for important changes, missed questions, and matters that need closer attention.
+
+## How to explain the result
+
+For a client-facing explanation, use ordinary words and the requested format. Explain unfamiliar abbreviations. Name what each number counts and explain its practical meaning. Keep internal identifiers out of the explanation. Keep necessary technical details in the working steps and technical references.
+
+## Following the process
+
+Use the process below. Preserve its conditions, commands, checks, and approval rules. Use information the user already supplied. Follow the existing questions or stopping rules when required information is missing.
+
 
 Help the user notice a mismatch, unanswered question, or meaningful change that could affect their next decision. Produce questions for reflection or discussion. Do not assume another person's motives, emotions, or intentions.
 

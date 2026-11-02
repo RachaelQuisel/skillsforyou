@@ -1,9 +1,23 @@
 ---
 name: course-completion-certificate
+version: 1.0.1
 description: "Course completion certificate. Use when a user asks to create, retrieve, replace, or verify a course completion certificate."
 ---
 
 # Course completion certificate
+
+## Purpose in plain English
+
+This skill helps you create, retrieve, replace, or verify a course completion certificate.
+
+## How to explain the result
+
+For a client-facing explanation, use ordinary words and the requested format. Explain unfamiliar abbreviations. Name what each number counts and explain its practical meaning. Keep internal identifiers out of the explanation. Keep necessary technical details in the working steps and technical references.
+
+## Following the process
+
+Use the process below. Preserve its conditions, commands, checks, and approval rules. Use information the user already supplied. Follow the existing questions or stopping rules when required information is missing.
+
 
 ## Inputs
 

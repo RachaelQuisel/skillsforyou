@@ -1,9 +1,23 @@
 ---
 name: voice-align
+version: 1.0.1
 description: "Voice align. Use when content needs a clearer explanation, a shorter rewrite, or a review of what to keep, change, or remove."
 ---
 
 # Voice align
+
+## Purpose in plain English
+
+This skill helps you revise writing for clarity, concision, and plain English.
+
+## How to explain the result
+
+For a client-facing explanation, use ordinary words and the requested format. Explain unfamiliar abbreviations. Name what each number counts and explain its practical meaning. Keep internal identifiers out of the explanation. Keep necessary technical details in the working steps and technical references.
+
+## Following the process
+
+Use the process below. Preserve its conditions, commands, checks, and approval rules. Use information the user already supplied. Follow the existing questions or stopping rules when required information is missing.
+
 
 ## Inputs
 

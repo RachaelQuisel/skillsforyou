@@ -1,38 +1,17 @@
-# Work voice
+# Draft or revise a work message with the reader, purpose, and tone in mind
 
-## Trigger
+This skill helps you draft or revise a work message with the reader, purpose, and tone in mind.
 
-I use this skill to draft direct, considerate work messages. The reader should understand the request and what happens next without having to interpret vague language.
+## What to share
 
-An email, follow-up, project update, or difficult work message needs a draft or revision.
+Share the draft, identify its reader, and explain the purpose and tone you want.
 
-## Inputs
+## How to start
 
-- The message context and recipient’s role.
-- The intended request, relevant facts, and commitments already made.
-- Any limits or uncertainties that need to remain clear.
+Select this skill and describe your request. The assistant uses the information and tools available in that conversation.
 
-## What happens
+## Detailed guidance
 
-1. Identify what would help the reader respond.
-2. Acknowledge the writer’s contribution to any confusion.
-3. Offer concrete options when a decision is needed.
-4. Use specific context without adding unsupported personal details.
-5. Separate working estimates from commitments.
-6. End with the relevant question or next action.
+The [working instructions](SKILL.md) describe the skill's steps, required tools, and limits.
 
-## Outputs
-
-A message draft for review, with language calibrated to the available evidence.
-
-## Try it with a fictional example
-
-Once the source skill is installed and configured, use a request like this:
-
-```text
-Use the work-voice skill to draft a fictional project update. Explain that the delivery estimate depends on receiving the sample data. Ask when the data will be available.
-```
-
-## Setup and limits
-
-This public version uses general communication principles and supplied context. It includes no personal correspondence or private writing samples. Drafting does not authorize sending.
+The [technical guide and examples](TECHNICAL-GUIDE.md) retain the earlier detailed documentation.

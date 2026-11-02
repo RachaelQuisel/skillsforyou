@@ -1,9 +1,23 @@
 ---
 name: work-voice
+version: 1.0.1
 description: "Work voice. Use when an email, follow-up, project update, or difficult work message needs a draft or revision."
 ---
 
 # Work voice
+
+## Purpose in plain English
+
+This skill helps you draft or revise a work message with the reader, purpose, and tone in mind.
+
+## How to explain the result
+
+For a client-facing explanation, use ordinary words and the requested format. Explain unfamiliar abbreviations. Name what each number counts and explain its practical meaning. Keep internal identifiers out of the explanation. Keep necessary technical details in the working steps and technical references.
+
+## Following the process
+
+Use the process below. Preserve its conditions, commands, checks, and approval rules. Use information the user already supplied. Follow the existing questions or stopping rules when required information is missing.
+
 
 ## Inputs
 

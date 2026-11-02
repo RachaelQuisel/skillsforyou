@@ -1,9 +1,23 @@
 ---
 name: how-it-works-doc
+version: 1.0.1
 description: "How-it-works document. Use when a workflow needs an explanation for an operator, owner, or engineer."
 ---
 
 # How-it-works document
+
+## Purpose in plain English
+
+This skill helps you explain an automation's starting point, information, steps, results, and practical limits in plain English.
+
+## How to explain the result
+
+For a client-facing explanation, use ordinary words and the requested format. Explain unfamiliar abbreviations. Name what each number counts and explain its practical meaning. Keep internal identifiers out of the explanation. Keep necessary technical details in the working steps and technical references.
+
+## Following the process
+
+Use the process below. Preserve its conditions, commands, checks, and approval rules. Use information the user already supplied. Follow the existing questions or stopping rules when required information is missing.
+
 
 ## Inputs
 

@@ -1,37 +1,17 @@
-# Client document decisions
+# Record a project decision, the reasons for it, and the alternatives considered
 
-## Trigger
+This skill helps you record a project decision, the reasons for it, and the alternatives considered.
 
-I use this skill to preserve why a decision was made so someone can understand it later without reopening the whole conversation.
+## What to share
 
-A project decision needs to be recorded.
+Share the source notes or files, identify the reader, and describe the document or explanation you need.
 
-## Inputs
+## How to start
 
-- The project and build name.
-- The decision, its reason, and alternatives considered.
-- The existing decision log.
+Select this skill and describe your request. The assistant uses the information and tools available in that conversation.
 
-## What happens
+## Detailed guidance
 
-1. Confirm the scope.
-2. Ask for missing decision context.
-3. Read the current log.
-4. Append a dated entry explaining the choice and rejected alternatives.
-5. Preserve earlier entries, including decisions later reversed.
+The [working instructions](SKILL.md) describe the skill's steps, required tools, and limits.
 
-## Outputs
-
-An updated local `decisions.md` file containing lightweight architecture decision records.
-
-## Try it with a fictional example
-
-Once the source skill is installed and configured, use a request like this:
-
-```text
-Use client-doc-decisions for a fictional equipment service. Record the choice to require approval for high-value reservations, including the reason and the alternative considered.
-```
-
-## Setup and limits
-
-A reversal becomes a new entry that references the earlier decision. The original history is not rewritten. Publication is handled separately. Supply the local destination. No repository mapping is bundled.
+The [technical guide and examples](TECHNICAL-GUIDE.md) retain the earlier detailed documentation.

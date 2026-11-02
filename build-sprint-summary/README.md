@@ -1,38 +1,17 @@
-# Build sprint summary
+# Turn collected task information into a readable summary of progress during a work period
 
-## Trigger
+This skill helps you turn collected task information into a readable summary of progress during a work period.
 
-I use this skill to turn grouped task data into a status update that starts with work needing attention.
+## What to share
 
-Task data has already been collected and needs a readable sprint summary.
+Share the source notes or files, identify the reader, and describe the document or explanation you need.
 
-## Inputs
+## How to start
 
-- The project name and sprint dates.
-- Tasks grouped as In Progress, At Risk, Done, Carried, or Cancelled.
-- Logged hours for completed tasks, when available.
+Select this skill and describe your request. The assistant uses the information and tools available in that conversation.
 
-## What happens
+## Detailed guidance
 
-1. Count completed tasks as velocity.
-2. Calculate completion rate as Done divided by Done plus In Progress plus Carried.
-3. Identify overdue tasks that are still in progress.
-4. Sort active work by due date and completed work by completion date.
-5. Show active work first, followed by completed work, carried work, and totals.
-6. Omit logged hours when the source values are mostly missing.
+The [working instructions](SKILL.md) describe the skill's steps, required tools, and limits.
 
-## Outputs
-
-Formatted summary text that can be reviewed before it is saved or sent.
-
-## Try it with a fictional example
-
-Once the source skill is installed and configured, use a request like this:
-
-```text
-Use build-sprint-summary for a fictional sprint with 6 done, 2 in progress, and 2 carried tasks. Use the supplied task dates to identify overdue work.
-```
-
-## Setup and limits
-
-That fictional sprint has a 60% completion rate. At Risk is a subset of active work, not another group to add to the denominator. The skill formats supplied data; it does not fetch tasks or post to Slack. Empty sprint totals need an explicit no-data treatment.
+The [technical guide and examples](TECHNICAL-GUIDE.md) retain the earlier detailed documentation.

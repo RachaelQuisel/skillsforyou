@@ -1,9 +1,23 @@
 ---
 name: gem-miner
+version: 1.0.1
 description: Find funny, sweet, weird, surprising, or memorable things the user said in supplied or explicitly authorized messages. Use for "mine gems", "find gems", "what did I say today?", or a quote collection. Return source-backed quotes for review; don't publish or upload them automatically.
 ---
 
 # Gem Miner
+
+## Purpose in plain English
+
+This skill helps you find memorable or amusing lines from the day's conversations and save the selected quotes.
+
+## How to explain the result
+
+For a client-facing explanation, use ordinary words and the requested format. Explain unfamiliar abbreviations. Name what each number counts and explain its practical meaning. Keep internal identifiers out of the explanation. Keep necessary technical details in the working steps and technical references.
+
+## Following the process
+
+Use the process below. Preserve its conditions, commands, checks, and approval rules. Use information the user already supplied. Follow the existing questions or stopping rules when required information is missing.
+
 
 Find the user's memorable lines without rewriting them into something they didn't say. Return a small set of candidates the user can keep, discard, or turn into posts.
 

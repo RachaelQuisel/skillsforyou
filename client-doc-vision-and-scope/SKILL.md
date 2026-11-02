@@ -1,9 +1,23 @@
 ---
 name: client-doc-vision-and-scope
+version: 1.0.1
 description: "Client vision and scope. Use when a project needs a new or revised scope document."
 ---
 
 # Client vision and scope
+
+## Purpose in plain English
+
+This skill helps you explain a client project's problem, intended result, included work, and excluded work.
+
+## How to explain the result
+
+For a client-facing explanation, use ordinary words and the requested format. Explain unfamiliar abbreviations. Name what each number counts and explain its practical meaning. Keep internal identifiers out of the explanation. Keep necessary technical details in the working steps and technical references.
+
+## Following the process
+
+Use the process below. Preserve its conditions, commands, checks, and approval rules. Use information the user already supplied. Follow the existing questions or stopping rules when required information is missing.
+
 
 ## Inputs
 

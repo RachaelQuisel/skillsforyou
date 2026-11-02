@@ -1,37 +1,17 @@
-# File naming convention
+# Give saved client documents consistent names so their purpose and date are easy to recognize
 
-## Trigger
+This skill helps you give saved client documents consistent names so their purpose and date are easy to recognize.
 
-I use one filename pattern to make project documents easier to find. The name tells me which project a file belongs to, what it contains, and when it was created.
+## What to share
 
-A project document needs to be saved or an unclear filename needs to be replaced.
+Describe the result you need and share the relevant files, notes, or examples you want this skill to use.
 
-## Inputs
+## How to start
 
-- The project code and document type.
-- The relevant date, topic, and version when needed.
-- The existing folder structure.
+Select this skill and describe your request. The assistant uses the information and tools available in that conversation.
 
-## What happens
+## Detailed guidance
 
-1. Choose the project code and document type.
-2. Use the document date or the date of the event it describes.
-3. Add a topic only when it helps distinguish the file.
-4. Add a version when another version exists.
-5. Save the file in the established folder and preserve earlier versions when needed.
+The [working instructions](SKILL.md) describe the skill's steps, required tools, and limits.
 
-## Outputs
-
-A filename in the form `<PROJECT>-<Type>-YYYY-MM-DD[-topic][-v2].ext`.
-
-## Try it with a fictional example
-
-Once the source skill is installed and configured, use a request like this:
-
-```text
-Use file-naming-convention to name a fictional Northwind workshop recap from September 10, 2026. Use NW as the project code.
-```
-
-## Setup and limits
-
-The source convention applies to project documents. It excludes code, configuration, temporary files, and unrelated folders. A sample result is `NW-CallNotes-2026-09-10-Workshop.md`. Choose project codes and folders for your own workspace.
+The [technical guide and examples](TECHNICAL-GUIDE.md) retain the earlier detailed documentation.

@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "repository": "RachaelQuisel/skillsforyou",
+  "packages": [],
+  "skills": [
+    {
+      "path": "airtable-backup-and-migrate/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "dd2ca98218cf3ac2f32e4095ab273d657ec4e4ab18244bd6f1fd603c0c60bd98",
+      "source": "airtable-backup-and-migrate/SKILL.md",
+      "guide": "airtable-backup-and-migrate/README.md"
+    },
+    {
+      "path": "applicant-csv-to-airtable-sync/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "9c33f78c8cf0979210c5496b39b181c0d67b73da9bbc59f24307fdeacfebe962",
+      "source": "applicant-csv-to-airtable-sync/SKILL.md",
+      "guide": "applicant-csv-to-airtable-sync/README.md"
+    },
+    {
+      "path": "auto/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "ccf840b1a74e4285902bce4b2d1de4a2402a3754af8d28a807c569c80f22b62a",
+      "source": "auto/SKILL.md",
+      "guide": "auto/README.md"
+    },
+    {
+      "path": "build-sprint-summary/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "9ccac0dba8a2baeb2e8f20cca42dfb3708071d0a2bf6f91abb0bced243f95330",
+      "source": "build-sprint-summary/SKILL.md",
+      "guide": "build-sprint-summary/README.md"
+    },
+    {
+      "path": "client-doc-changelog/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "00d0d1eecdf1b6e579384b7cbde74392622266a0bc384af944a24c4bd2ec3d1c",
+      "source": "client-doc-changelog/SKILL.md",
+      "guide": "client-doc-changelog/README.md"
+    },
+    {
+      "path": "client-doc-decisions/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "831f3673ec1be06de8bc96f39e4d61bbcdae88414a61956fe17274996030f580",
+      "source": "client-doc-decisions/SKILL.md",
+      "guide": "client-doc-decisions/README.md"
+    },
+    {
+      "path": "client-doc-interface-prompts/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "8611b8911bec2f8c470f1e71b2868bb1292464b56d14dcf02dcf77dd3aa6cf9d",
+      "source": "client-doc-interface-prompts/SKILL.md",
+      "guide": "client-doc-interface-prompts/README.md"
+    },
+    {
+      "path": "client-doc-push/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "ea2114c61de6c9c537a830ce0e0575fe3cf57239a4756ecbb60f2acc737c350f",
+      "source": "client-doc-push/SKILL.md",
+      "guide": "client-doc-push/README.md"
+    },
+    {
+      "path": "client-doc-user-stories/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "06773e812eaa200e077b9a68d2af4ac7a56a9ebcbace25c2269451e32656a932",
+      "source": "client-doc-user-stories/SKILL.md",
+      "guide": "client-doc-user-stories/README.md"
+    },
+    {
+      "path": "client-doc-vision-and-scope/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "bdcc9212706ccd52557c2a10cb417ef470745627461521faa4c68f2267c0db09",
+      "source": "client-doc-vision-and-scope/SKILL.md",
+      "guide": "client-doc-vision-and-scope/README.md"
+    },
+    {
+      "path": "client-docs/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "dc2ea54083604fd2e9573bf7255469a911c9e69c1583213d63500f9cb8047537",
+      "source": "client-docs/SKILL.md",
+      "guide": "client-docs/README.md"
+    },
+    {
+      "path": "course-completion-certificate/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "0ec51696465e87c2691ec5f698e095839b816c2f59a4c133fb6fc4d1c74f697e",
+      "source": "course-completion-certificate/SKILL.md",
+      "guide": "course-completion-certificate/README.md"
+    },
+    {
+      "path": "dissonance-radar/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "cbf83c4487a9e4a621295af9abce691d8fb582861dd1da579fb64a0086c45c35",
+      "source": "dissonance-radar/SKILL.md",
+      "guide": "dissonance-radar/README.md"
+    },
+    {
+      "path": "education/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "19c9602501d0270cdf3daece220d29165a30f935b793364aa9ef6de1984e1057",
+      "source": "education/SKILL.md",
+      "guide": "education/README.md"
+    },
+    {
+      "path": "eval-creation/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "2f14c1c8596c9b92b60ffd1c12c13fcdc90b941cb713a3a6ff2dec15a93c1bc1",
+      "source": "eval-creation/SKILL.md",
+      "guide": "eval-creation/README.md"
+    },
+    {
+      "path": "execute-and-reconcile-pain-points/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "6a40eca4920af9a547558cb8344500f74b3046192d89a2a52933ca449295cadf",
+      "source": "execute-and-reconcile-pain-points/SKILL.md",
+      "guide": "execute-and-reconcile-pain-points/README.md"
+    },
+    {
+      "path": "file-naming-convention/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "85227ed86ae567990e409ead3f96259d6fe4d6d3e73df753b4b271f04bad5a60",
+      "source": "file-naming-convention/SKILL.md",
+      "guide": "file-naming-convention/README.md"
+    },
+    {
+      "path": "five-signals-prd/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "daadc084244e6dce61afd8f9bd0263c6c4423af9ff8830824a5e203cff70c419",
+      "source": "five-signals-prd/SKILL.md",
+      "guide": "five-signals-prd/README.md"
+    },
+    {
+      "path": "friday-sprint-summary/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "4019f3a72c6734d8dccdc0c360539d9263c59f22df6413e8c34e640b48ee9b6c",
+      "source": "friday-sprint-summary/SKILL.md",
+      "guide": "friday-sprint-summary/README.md"
+    },
+    {
+      "path": "gem-miner/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "f95e5d829ec0077ca28b24a7819ba46d7dcfb6018f0088a8854f87ea674fd9e8",
+      "source": "gem-miner/SKILL.md",
+      "guide": "gem-miner/README.md"
+    },
+    {
+      "path": "gmail-triage/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "05d3c8d6854bceae3d7c057ac741cfd508c5210419c24b07873bbf492a3818a2",
+      "source": "gmail-triage/SKILL.md",
+      "guide": "gmail-triage/README.md"
+    },
+    {
+      "path": "how-it-works-doc/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "969bf0afc44286c14bc7131b49eb34d708e000d28cc54f937511cf555ddb9500",
+      "source": "how-it-works-doc/SKILL.md",
+      "guide": "how-it-works-doc/README.md"
+    },
+    {
+      "path": "kpi-report/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "5b1c71a4439d3ff0636dd1faca945e36244db8da3c229ec0ff853ce99a94f6eb",
+      "source": "kpi-report/SKILL.md",
+      "guide": "kpi-report/README.md"
+    },
+    {
+      "path": "meeting-prep/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "d72f57f612d42cd9794e0eefeece71757258429e2fd3a95e7007a9bea5087822",
+      "source": "meeting-prep/SKILL.md",
+      "guide": "meeting-prep/README.md"
+    },
+    {
+      "path": "micro-case-study/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "085b5362076f7a5239b3b725ac0ab1b10fd7c8620a834de08949d70e301b6a65",
+      "source": "micro-case-study/SKILL.md",
+      "guide": "micro-case-study/README.md"
+    },
+    {
+      "path": "mistakes/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "7c4c8ce3acc8551bd10dd75fd372f2a86a8c2b9adebd85827cd24e47e411d942",
+      "source": "mistakes/SKILL.md",
+      "guide": "mistakes/README.md"
+    },
+    {
+      "path": "normalize-csvs-for-airtable/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "f593289f6cf2f235d980f0e99d953dd8f58c9f98dcbb428b5746526f7888ac7a",
+      "source": "normalize-csvs-for-airtable/SKILL.md",
+      "guide": "normalize-csvs-for-airtable/README.md"
+    },
+    {
+      "path": "omni-prompt/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "5b409f85117db9b7cc4aea111fdff24ce23c0b483ec7cc5d09a98b19f710a353",
+      "source": "omni-prompt/SKILL.md",
+      "guide": "omni-prompt/README.md"
+    },
+    {
+      "path": "plain-english-project-communication/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "767cc564cf08fae5f142591e0bfa049564c3e697e773bba920102072b366c881",
+      "source": "plain-english-project-communication/SKILL.md",
+      "guide": "plain-english-project-communication/README.md"
+    },
+    {
+      "path": "post-to-huddle/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "59c468e2bf3eb81d39cc6ad3a023a4391022bdbeb981fdc36a68a1c9d82dc9cc",
+      "source": "post-to-huddle/SKILL.md",
+      "guide": "post-to-huddle/README.md"
+    },
+    {
+      "path": "postmortem/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "91bf3958032804214d4003efb4b4d92b53a0fd1bb1dde2391d5691914e69ca9c",
+      "source": "postmortem/SKILL.md",
+      "guide": "postmortem/README.md"
+    },
+    {
+      "path": "rubric/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "1d33b202ac437ef2b77c937946ac1ae979a2626a1fb5d4ad86c23d7e441f6b9f",
+      "source": "rubric/SKILL.md",
+      "guide": "rubric/README.md"
+    },
+    {
+      "path": "voice-align/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "ac432822be97ff3ec3bbd87e7b2c87b10f93aced63b37a03b29b82aa91bfa2b3",
+      "source": "voice-align/SKILL.md",
+      "guide": "voice-align/README.md"
+    },
+    {
+      "path": "work-voice/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "b4f761b228c7984335ff3c224dd7af770703182113abdc5fbf2d765336e65e04",
+      "source": "work-voice/SKILL.md",
+      "guide": "work-voice/README.md"
+    },
+    {
+      "path": "write-artifact/SKILL.md",
+      "version": "1.0.1",
+      "sha256": "761cb75b85513f35df9e1215c53037b46ab297e3982b971c9d7f8b0927d8142f",
+      "source": "write-artifact/SKILL.md",
+      "guide": "write-artifact/README.md"
+    }
+  ],
+  "copies": []
+}

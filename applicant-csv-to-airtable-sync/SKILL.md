@@ -1,9 +1,23 @@
 ---
 name: applicant-csv-to-airtable-sync
+version: 1.0.1
 description: Audit, preview, or apply user-supplied applicant and application CSVs to a configured Airtable base. Apply updates Application and Applicant records, returns client-ready change reports, and records one Automation Log. Use only when the user explicitly invokes $applicant-csv-to-airtable-sync. Never open the source system or search a downloads folder.
 ---
 
 # Applicant CSV to Airtable Sync
+
+## Purpose in plain English
+
+This skill helps you check applicant exports and apply the approved changes to the configured Airtable workspace.
+
+## How to explain the result
+
+For a client-facing explanation, use ordinary words and the requested format. Explain unfamiliar abbreviations. Name what each number counts and explain its practical meaning. Keep internal identifiers out of the explanation. Keep necessary technical details in the working steps and technical references.
+
+## Following the process
+
+Use the process below. Preserve its conditions, commands, checks, and approval rules. Use information the user already supplied. Follow the existing questions or stopping rules when required information is missing.
+
 
 ## Choose the mode
 
