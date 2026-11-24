@@ -1,0 +1,12 @@
+{
+  "teams": {"P01": "T01", "P02": "T01", "P03": "T02", "P04": "T02", "P05": "T03"},
+  "events": [
+    {"id": "E01", "kind": "request", "from": "P01", "to": "P03"},
+    {"id": "E02", "kind": "request", "from": "P02", "to": "P04"},
+    {"id": "E03", "kind": "handoff", "from": "P01", "to": "P04"},
+    {"id": "E04", "kind": "handoff", "from": "P03", "to": "P05"},
+    {"id": "E05", "kind": "decision", "from": "P05", "to": "P04"},
+    {"id": "E06", "kind": "request", "from": "P02", "to": "P01"},
+    {"id": "E07", "kind": "request", "from": "P05", "to": "P01"}
+  ]
+}

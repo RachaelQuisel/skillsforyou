@@ -6,7 +6,7 @@ Practical AI skills from Rachael Quisel. Take what helps, tweak it for your setu
 
 ## Available skills
 
-37 public skills. Each ZIP includes its instructions, supporting files, and license.
+38 public skills. Each ZIP includes its instructions, supporting files, and license.
 
 | Skill | What it does | Download |
 | --- | --- | --- |
@@ -44,6 +44,7 @@ Practical AI skills from Rachael Quisel. Take what helps, tweak it for your setu
 | [Post to huddle](post-to-huddle/README.md) | Deliver an approved message to a configured Slack channel. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/post-to-huddle.zip) |
 | [Postmortem](postmortem/README.md) | Preview or send monthly reflection questions with duplicate checks. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/postmortem.zip) |
 | [Rubric](rubric/README.md) | Review a plan against explicit criteria and revise it. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/rubric.zip) |
+| [Slack Power Map](slack-power-map/README.md) | Compare team collaboration patterns using a scoped Slack sample. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/slack-power-map.zip) |
 | [Voice align](voice-align/README.md) | Rewrite for clarity while preserving the source facts. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/voice-align.zip) |
 | [Work voice](work-voice/README.md) | Draft direct, considerate messages with realistic commitments. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/work-voice.zip) |
 | [Write artifact](write-artifact/README.md) | Save an approved document as a new Airtable record. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/write-artifact.zip) |

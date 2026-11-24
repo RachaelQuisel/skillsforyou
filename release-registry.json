@@ -242,6 +242,13 @@
       "guide": "rubric/README.md"
     },
     {
+      "path": "slack-power-map/SKILL.md",
+      "source": "slack-power-map/SKILL.md",
+      "version": "1.0.0",
+      "sha256": "9a6884251e8e9f3f1ef92f9b3f241b747e23eb4b8c89974b0018de3e158a9345",
+      "guide": "slack-power-map/README.md"
+    },
+    {
       "path": "voice-align/SKILL.md",
       "version": "1.0.1",
       "sha256": "ac432822be97ff3ec3bbd87e7b2c87b10f93aced63b37a03b29b82aa91bfa2b3",
