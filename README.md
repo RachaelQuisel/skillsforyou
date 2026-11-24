@@ -6,13 +6,14 @@ Practical AI skills from Rachael Quisel. Take what helps, tweak it for your setu
 
 ## Available skills
 
-35 public skills. Each ZIP includes its instructions, supporting files, and license.
+37 public skills. Each ZIP includes its instructions, supporting files, and license.
 
 | Skill | What it does | Download |
 | --- | --- | --- |
 | [Airtable backup](airtable-backup-and-migrate/README.md) | Save schema, records, and attachment files locally. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/airtable-backup-and-migrate.zip) |
 | [Auto](auto/README.md) | Explain one automation from its current source. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/auto.zip) |
 | [Applicant CSV to Airtable sync](applicant-csv-to-airtable-sync/README.md) | Audit, preview, or apply supplied applicant CSVs to a configured base. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/applicant-csv-to-airtable-sync.zip) |
+| [Binti and Airtable date reconciliation](binti-airtable-date-reconciliation/README.md) | Preview differences in application dates from an authorized export. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/binti-airtable-date-reconciliation.zip) |
 | [Build sprint summary](build-sprint-summary/README.md) | Format supplied task data into a status update. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/build-sprint-summary.zip) |
 | [Client document changelog](client-doc-changelog/README.md) | Record shipped changes and their user-visible effects. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-changelog.zip) |
 | [Client document decisions](client-doc-decisions/README.md) | Preserve decisions, reasons, and alternatives. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/client-doc-decisions.zip) |
@@ -26,6 +27,7 @@ Practical AI skills from Rachael Quisel. Take what helps, tweak it for your setu
 | [Education](education/README.md) | Create a detailed automation handoff for operators and engineers. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/education.zip) |
 | [Evaluation creation](eval-creation/README.md) | Define evidence-based checks for a repeated process. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/eval-creation.zip) |
 | [Execute and reconcile pain points](execute-and-reconcile-pain-points/README.md) | Connect implementation evidence to issue status updates. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/execute-and-reconcile-pain-points.zip) |
+| [Explain Code](explain-code/README.md) | Teach what code does with a mental model, diagram, example, and gotcha. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/explain-code.zip) |
 | [File naming convention](file-naming-convention/README.md) | Give project documents consistent, useful filenames. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/file-naming-convention.zip) |
 | [Five-signals PRD](five-signals-prd/README.md) | Explain requirements, estimates, design choices, and failure cases. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/five-signals-prd.zip) |
 | [Friday sprint summary](friday-sprint-summary/README.md) | Prepare or deliver configured weekly project updates. | [ZIP](https://github.com/RachaelQuisel/skillsforyou/raw/refs/heads/main/downloads/friday-sprint-summary.zip) |

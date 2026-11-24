@@ -25,6 +25,13 @@
       "guide": "auto/README.md"
     },
     {
+      "path": "binti-airtable-date-reconciliation/SKILL.md",
+      "version": "1.0.0",
+      "sha256": "04cd97f041f0fd3e97f0d10e5680bc42a7368bd261d17613118cd531464b0429",
+      "source": "binti-airtable-date-reconciliation/SKILL.md",
+      "guide": "binti-airtable-date-reconciliation/README.md"
+    },
+    {
       "path": "build-sprint-summary/SKILL.md",
       "version": "1.0.1",
       "sha256": "9ccac0dba8a2baeb2e8f20cca42dfb3708071d0a2bf6f91abb0bced243f95330",
@@ -114,6 +121,13 @@
       "sha256": "6a40eca4920af9a547558cb8344500f74b3046192d89a2a52933ca449295cadf",
       "source": "execute-and-reconcile-pain-points/SKILL.md",
       "guide": "execute-and-reconcile-pain-points/README.md"
+    },
+    {
+      "path": "explain-code/SKILL.md",
+      "version": "1.1.1",
+      "sha256": "401f07eea80acceef12a6e77aef8e1a44beaa0a8514d6b3af188ebab167dd33b",
+      "source": "explain-code/SKILL.md",
+      "guide": "explain-code/README.md"
     },
     {
       "path": "file-naming-convention/SKILL.md",
